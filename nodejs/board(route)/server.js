@@ -24,3 +24,10 @@ app.use('/board',board);
 app.listen(3000,()=>{
   console.log('server start port:3000');
 })
+
+
+// const express = require('express');
+// const main = require('./routes/index');
+// app.use('/',main);
+// const router = express.Router();
+// module.exports=router;
