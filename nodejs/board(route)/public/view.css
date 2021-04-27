@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+ul,li{
+    list-style: none;
+}
+#wrap{
+    width: 100%;
+    height: 1000px;
+    background: url(https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTAyMTdfMiAg%2FMDAxNjEzNTUzNjM4NTUy.4VGQrYKdKFiTNP_DjRX0qhCdzZGJE4sn_ZOOrV2-QPkg.2za6L7ep4Kwevi_dL-FIfWABbfi4yBFEwbUmpz8Cn6gg.JPEG.cruedy%2F%25B9%25CC%25C5%25F5%25B7%25A5%25C7%25C1_6.jpg&type=sc960_832) no-repeat 0px;
+    background-size: 100%;
+}
+#header{
+    width: 1200px;
+    height: 100px;
+    text-align: center;
+    margin: 0 auto;
+}
+#body{
+    width: 1200px;
+    height: 800px;
+    margin: 0 auto;
+}
+.text{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+#subject{
+    width: 1200px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#board_name{
+    width: 1200px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#content{
+    width: 1200px;
+    height: 600px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.btn{
+    width: 100px;
+    height: 30px;
+    display: inline-block;
+    padding: 7px 14px;
+    text-align: center;
+    line-height: 22px;
+    border-radius: 15px;
+    background: black;
+    color: #fff;
+    float: right;
+}

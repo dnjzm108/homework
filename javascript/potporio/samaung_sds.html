@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼성SDS</title>
+    <link rel="stylesheet" href="./css/samsung_sds.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=PT+Sans:wght@700&display=swap"
+        rel="stylesheet">
+    <script type="text/javascript" src="./samsung_sds.js"></script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="main">
+            <!-- header start -->
+            <div id="header">
+                <img class="main_img" src="./삼성SDS_files/닷컴-메인페이지(PC용)(1920x1080)_20210319.jpg">
+                <img class="none" src="./삼성SDS_files/GettyImages-1175082919_3.jpg">
+                <img class="none" src="./삼성SDS_files/GettyImages-1146965574.jpg">
+                <img class="none" src="./삼성SDS_files/BW_keyvisual_1920x1080_PC 2-1_2.jpg">
+                <div id="header_top" onmouseover="top_on()" onmouseout="top_out()">
+                    <div id="header_menu">
+                        <ul id="header_menu_left">
+                            <li>
+                                <a id="logo" class="top1" href="#">SAMSUNG SDS</a>
+                            </li>
+                            <li onmouseover="hidden_on()" onmouseout="hidden_out()">
+                                <a class="menu_text top1" href="#">오퍼링</a>
+                            </li>
+                            <li onmouseover="hidden_on2()" onmouseout="hidden_out2()">
+                                <a class="menu_text top1" href="#">업종</a>
+                            </li>
+                            <li class="top1">|</li>
+                            <li><a class="menu_text top1" href="#">DT엔진</a>
+                            </li>
+                            <li>
+                                <a class="menu_text top1" href="#">무료체험</a>
+                            </li>
+                        </ul>
+                        <ul id="header_menu_rigth">
+                            <li onmouseover="hidden_on3()" onmouseout="hidden_out3()">
+                                <a class="menu_text top1" href="#">라이브러리</a>
+                            </li>
+                            <li onmouseover="hidden_on4()" onmouseout="hidden_out4()">
+                                <a class="menu_text top1" href="#">뉴스룸</a>
+                            </li>
+                            <li onmouseover="hidden_on5()" onmouseout="hidden_out5()">
+                                <a class="menu_text top1" href="#">회사정보</a>
+                            </li>
+                            <li>
+                                <a class="menu_text top1" href="#">My Trial</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="header_icon">
+                        <img class="top1" onclick="hidden_on6()"
+                            src="https://image.samsungsds.com/module_src/images/icon/ic_myvisit_white.svg">
+                        <img class="top1" onclick="hidden_on7()"
+                            src="https://image.samsungsds.com/module_src/images/icon/ic_search_white.svg">
+                        <input type="checkbox" id="top_solid" class="none"">
+                        <label id="make_icon" for="top_solid" onclick="hidden_8()">
+                            <span class="top1"></span>
+                            <span class="top1"></span>
+                            <span class="top1"></span>
+                        </label>
+                    </div>
+                </div>
+                <div id="hidden_bar_box" class="none" onmouseover="hidden_on()" onmouseout="hidden_out()">
+                    <div id="hidden_bar">
+                        <div>
+                            <ul>
+                                <li><a href="#">인공지능/애널리틱스 ＞</a></li>
+                                <li><a href="#">Brightics Machine Learning</a></li>
+                                <li><a href="#">Brightics Deep Learning</a></li>
+                                <li><a href="#">Brightics Data Preparation</a></li>
+                                <li><a href="#">Brightics Data Hub</a></li>
+                                <li><a href="#">Brightics Visual Search</a></li>
+                                <li><a href="#">Brightics Analytics Services</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">사물인터넷 </a></li>
+                                <li><a href="#">Brightics IoT</a></li>
+                                <li><a href="#">Brightics IoT BMS</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">블록체인 ＞</a></li>
+                                <li><a href="#">Nexledger Unlversal</a></li>
+                                <li><a href="#">Nexledger Accelerator</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">코그니티브 ＞</a></li>
+                                <li><a href="#">AI Cognitive Services</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">클라우드 ＞</a></li>
+                                <li><a href="#">Hybrid Cloud Services</a></li>
+                                <li><a href="#">Cloud Transfomarion Services</a></li>
+                                <li><a href="#">Cloud Management Services</a></li>
+                                <li><a href="#">Cloud Applocarion Services</a></li>
+                                <li><a href="#">IT Infra Services</a></li>
+                                <li><a href="#">Network Services</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li><a href="#">보안 ＞</a></li>
+                                <li><a href="#">보안컨설팅</a></li>
+                                <li><a href="#">보안관제서비스</a></li>
+                                <li><a href="#">클라우드 보안 서비스</a></li>
+                                <li><a href="#">보안솔루션</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">자동화/협업(Britu Works) ＞</a></li>
+                                <li><a href="#">Brtty RPA</a></li>
+                                <li><a href="#">Brtty Assistant</a></li>
+                                <li><a href="#">Brtty Messenger</a></li>
+                                <li><a href="#">Brtty Mail</a></li>
+                                <li><a href="#">Brtty Meeting</a></li>
+                                <li><a href="#">Brtty Drive</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">Digltal Accelerator ＞</a></li>
+                                <li><a href="#">CX Innovation</a></li>
+                                <li><a href="#">Aglle Approach</a></li>
+                                <li><a href="#">Developnebt Plaltorm</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li><a href="#">DT 서비스 ＞</a></li>
+                                <li><a href="#">DT Consulting</a></li>
+                                <li><a href="#">smart ETP</a></li>
+                                <li><a href="#">Digtal SCM</a></li>
+                                <li><a href="#">Digtal Marketting</a></li>
+                                <li><a href="#">Digtal EHS</a></li>
+                                <li><a href="#">Digtal HCM</a></li>
+                                <li><a href="#">smart ITO</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">인텔리전트 팩토리 ＞</a></li>
+                                <li><a href="#">Nenlant 3D Excellence</a></li>
+                                <li><a href="#">Nenlant PLM</a></li>
+                                <li><a href="#">Nenlant SLM</a></li>
+                                <li><a href="#">Nenlant MES</a></li>
+                                <li><a href="#">Nenlant EAM</a></li>
+                                <li><a href="#">Nenlant Visual Insight</a></li>
+                                <li><a href="#">Nenlant OT Viewer</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">인텔리전트 리테일 ＞</a></li>
+                                <li><a href="#">Nexshop Behavlor Sensing</a></li>
+                                <li><a href="#">Nwxshop Digital Experience</a></li>
+                                <li><a href="#">Nwxshop Omni-Channel</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li><a href="#">스마트 물류 ＞</a></li>
+                                <li><a href="#">Gloval Supply Chain</a></li>
+                                <li><a href="#">Freight Forwarding</a></li>
+                                <li><a href="#">Warehousing& Distribution</a></li>
+                                <li><a href="#">e-Commerce</a></li>
+                                <li><a href="#">Project Logisttcs</a></li>
+                                <li><a href="#">Cello</a></li>
+                                <li><a href="#">Cello Square</a></li>
+                                <li><a href="#">Cello Trust</a></li>
+                                <li><a href="#">Cello Digital Services</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">디지털 금융 ＞</a></li>
+                                <li><a href="#">Nexfinance</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">디지털 홈 ＞</a></li>
+                                <li><a href="#">Smart Home</a></li>
+                                <li><a href="#">Smart Lock</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">디지털 헬스 </a></li>
+                                <li><a href="#">Nexmed EHR</a></li>
+                                <li><a href="#">S-Patch Cardio</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div id="hidden_bar_box2" class="none" onmouseover="hidden_on2()" onmouseout="hidden_out2()">
+                    <div id="hidden_bar2">
+                        <ul>
+                            <a href="#">제조</a>
+                            <a href="#">물류</a>
+                            <a href="#">금융</a>
+                            <a href="#">리테일</a>
+                            <a href="#">헬스케어</a>
+                            <a href="#">EPC</a>
+                        </ul>
+                    </div>
+                </div>
+                <div id="hidden_bar_box3" class="none" onmouseover="hidden_on3()" onmouseout="hidden_out3()">
+                    <div id="hidden_bar3">
+                        <ul>
+                            <li><img src="./삼성SDS_files/04.knowledge_graph_thumbnail-gmb.jpg"></li>
+                            <li>삼성SDS 연구소만의 차별화된 지식 그래프 활용기술을 만나보세여</li>
+                            <li><a href="#">자세히보기 ＞</a><a href="#">다운로드 ＞</a></li>
+                        </ul>
+                        <ul>
+                            <li><img src="./삼성SDS_files/06.gpu_thumbnail-gnb.jpg"></li>
+                            <li>R&D Cloud for AI는 AI 연구 개발 환경애 맞춘 최적화된 환경을 제공합니다.</li>
+                            <li><a href="#"">자세히 보기 ＞</a><a href=" #">다운로드 ＞</a></li>
+                        </ul>
+                        <ul>
+                            <li>인사이트 리포트</li>
+                            <li>리소스</li>
+                            <li>고객사례</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div id="hidden_bar_box4" class="none" onmouseover="hidden_on4()" onmouseout="hidden_out4()">
+                    <div id="hidden_bar4">
+                        <ul>
+                            <li><img src="./삼성SDS_files/cyber7-gnb_1.jpg"></li>
+                            <li>는 보안 이수와 현장의 여러 사례를 분석하여 2021년 사이버 보안 7대 트렌드 선정했다.</li>
+                            <li><a href="#"> 자세히 보기 ＞</a></li>
+                        </ul>
+                        <ul>
+                            <li><img src="./삼성SDS_files/20192Q-performance-ko_gnb.jpg"></li>
+                            <li>삼성SDS가 한국 기업으로는 유일하게 IT서비스 기업 브랜드 가치 평가에서 글로벌 TOP10에 선정됐다.</li>
+                            <li><a href="#"> 자세히 보기 ＞</a></li>
+                        </ul>
+                        <ul>
+                            <li>언론보도</li>
+                            <li>이슈와 팩트</li>
+                            <li>삼성SDS 스토리</li>
+                            <li>미지어 갤러리</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div id="hidden_bar_box5" class="none" onmouseover="hidden_on5()" onmouseout="hidden_out5()">
+                    <div id="hidden_bar5">
+                        <ul>
+                            <img src="./삼성SDS_files/sustainability_report_kr_4.jpg">
+                            <li>삼성SDS 지속가능 경영보고서 2020</li>
+                            <a href="#">보고서 보기 ＞</a>
+                            <a href="#">요약본 보기 ＞</a>
+                        </ul>
+                        <ul>
+                            <li><a href="#">회사소개</a></li>
+                            <li>삼성SDS</li>
+                            <li>비전</li>
+                            <li>CEO 소개</li>
+                            <li>연혁</li>
+                            <li>사업장 소개</li>
+                            <li>EBC(솔루션 전시관)</li>
+                            <li>Awards&Recognition</li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">투자정보</a></li>
+                            <li>이사회 및 위원회</li>
+                            <li>주식정보</li>
+                            <li>재무정보</li>
+                            <li>IR행사</li>
+                            <li>공시 및 알림</li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">지속가능 경영</a></li>
+                            <li>준법경영</li>
+                            <li>윤리경영</li>
+                            <li>사회공헌</li>
+                            <li>동반성장</li>
+                            <li>관련 리포트</li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">이벤트 ＞</a></li>
+                            <li><a href="#">채용 ＞</a></li>
+                            <li><a href="#">XEED-LAB ＞</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="hidden_bar_box7" class="none">
+                    <div id="hidden_bar7">
+                        <div>
+                            <input type="text" placeholder="검색어를 입력하세요">
+                            <button></button>
+                        </div>
+                        <p>Quick Link</p>
+                        <a href="#">클라우드</a>
+                        <a href="#">보안</a>
+                        <a href="#">믈류</a>
+                        <a href="#">도어락</a>
+                        <a href="#">빅데이터</a>
+                        <a href="#">스마트팩토리</a>
+                    </div>
+                </div>
+
+                <!-- headertop end -->
+                <!-- header main -->
+                <div id="button_box">
+                    <a onclick="main_bnt(0)" href="#">01</a>
+                    <a onclick="main_bnt(1)" href="#">02</a>
+                    <a onclick="main_bnt(2)" href="#">03</a>
+                    <a onclick="main_bnt(3)" href="#">04</a>
+                </div>
+                <div class="header_text ">
+                    <h1>삼성SDS Cyber Secyrity Congetence 2021에 여러분을 초대합니다</h1>
+                    <p>코로나 팬데믹 이후 기업 환경의 빠른 변화와 함께 보안 위협의 증가 및 보안 사고도 빈번하게 발생하고 있습니다.
+                        2021년4월6일14시,저희가 준비한 컨퍼런스를 통해 최신 보안기술동향,생산시설 보안 등
+                        디지털 비지니스 환경변화를 고려한 새로운 보안체계를 경험해보시기 바랍니다.
+                    </p>
+                    <a href="#">기사보기</a>
+                    <a href="#">행사보기</a>
+                </div>
+                <div class="header_text none">
+                    <h1>삼성SDS,2021년 사이버보안 7대 트렌드 선정</h1>
+                    <p>삼성SDS는 지난해 국내외에서 발생한 보안 이슈와 현장의 여러 사례를 분석하여 2021년 사이버보안 7대 트렌드를 선정했습니다.
+                        ①비대면 환경을 노린 위협 증가②랜섬웨어 고도화③AI를 활용한 해킹 지능화④산업설비에 대한 위협 본격화⑤개인정보 등 민감
+                        데이터 보호 중요성 증대⑥클라우드 대상 공격 증가⑦의료분야 집중 공격 등을 중요 키워드로 꼽았으며,
+                        특히 비대면 업무환경 확대, 디지털 전환 가속화,데이터 산업 활성화드에 따라 사이버 위협도 더욱 증가할 것으로 예상되는 만큼
+                        기업의 철저한 보안 대책 마련이 필요하다고 강조했습니다.
+                    </p>
+                    <a href="#">기사보기</a>
+                    <a href="#">솔루션보기</a>
+                </div>
+                <div class="header_text none">
+                    <h1>법무도 디지털화 시대!
+                        삼성SDS,혁신기술로 경쟁력 키운다.
+                    </h1>
+                    <p>최근 들어 개인정보 보호 , 환경규제,지식재산권 등 기업경영 전반에 법률 이슈가 점점 커지고 있습니다.
+                        삼성SDS는 AI(인공지능),RPA(업무프로세스자동화)등 혁신기술을 적용한 AI기반 법률 플랫폼'브라이틱스 로' (Brightics Law)를
+                        개발하였고,연간 약 8,000건에 이르는 계약 내용을 검토하고,법무소송 관련 정보를 수집하는 업무에 적용하여 법무경쟁력을 높이고
+                        있습니다.
+                    </p>
+                    <a href="#">기사보기</a>
+                    <a href="#">인사이트 리포트 보기</a>
+                </div>
+                <div class="header_text none">
+                    <h1>일의 한계를 넘자! 브리티웍스</h1>
+                    <p>브리티웍스와 함께 당신의 일하는 방식이 달라집니다. 전섹{ 50만 삼성인이 사용하는 업무 플랫폼 브리티웍스!
+                        하나로 연결된 메일.메신저,미팅으로 언제 어디서나 협업하고,AI기반 챗봇과 RPA로 복잡한 반복 업무를 자동화 시켜보세요
+                    </p>
+                    <a href="#">솔루션보기</a>
+                </div>
+            </div>
+
+
+            <!-- header end -->
+            <!-- content start -->
+            <div id="content">
+                <h2>인사이트</h2>
+                <h3>AI기반 업무자동화,미래형 업무혁신 청사진을 제시합니다</h3>
+                <div><img src="./삼성SDS_files/Home_insight_big_banner.png"></div>
+                <div id="con_box">
+                    <ul>
+                        <li id="con_box_text">
+                            <a id="con_box_text_top" href="#">자동화 시대,일의 미래</a>
+                            <p>과거의 자동화는 주로 하드웨어 기반의 'Machine'을 사용하여 강력한 힘이 요구되거나,
+                                위험하고,정교하고,반복적인 업무에 인간을 대신하여 적용되었다면, 최근에는
+                                인공지능과 OCR 등 인지(Cognitive) 기술의 발전,RPA(Roviotic Process Automarion)와 같은 자동화
+                                솔루션의 등장으로 소프트웨어에 기반한'Robot'이 사무자동화 영역으로 확대되고 있습니다.
+                            </p>
+                            <a id="con_box_text_bottom" href="#">자세히 보기 &gt;</a>
+                        </li>
+                        <ul id="con_box_box">
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/dt_customer002_2.png">
+                                </div>
+                                <a class="con_box_box_a1" href="#">1.2만명 임직원 대상 COVID-19 실시간 문진</a>
+                                <P>삼성sds는 Brity RPA/Assistant 를 활요한 COVID-19 실시간 비상대응 문진을 통해 임직원의 건강과 안전을 관리하고 있습니다.</P>
+                                <a class="con_box_box_a2" href="#">자세히 보기 &gt;</a>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/dt_customer007.png">
+                                </div>
+                                <a class="con_box_box_a1" href="#">하이테크 기업, 업무 자동화로 연24만 시간 절감</a>
+                                <p>제조,개발,영업,품질등 사내 全부문에 Brity RPA솔루션 확산 적용을 통해 단순반복 및 정기 모니터링/보고 업무를 효율화 하였습니다.</p>
+                                <a class="con_box_box_a2" href="#">자세히 보기 &gt;</a>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/hrdt_thumbnail.jpg">
+                                </div>
+                                <a class="con_box_box_a1" href="#">Digital 기업이 일잘하는 법 - HR 혁신</a>
+                                <p>HR은 DIFITAL Transformation의 새로운 흐름을 마주하게 되었습니다.
+                                    AI,Blickchain,RPA등 최신기술을 활요하여 생산성을 높이고,DigitalAge에
+                                    맞게 생가하며 일하는 방식이 변화하는 Digital HR이 필요합니다.
+                                </p>
+                                <a class="con_box_box_a2" href="#">자세히 보기 &gt;</a>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/1232261_thumb.png">
+                                </div>
+                                <a class="con_box_box_a1" href="#">재무 업무자동화로 연 2.3만 시간 절감</a>
+                                <p>Brity RPA솔루션은 엔지니어링의 하도급 대금 지급 보증서 관리, 세금계산서
+                                    연결업무등의 혁신적인 업무자동화를 통해 고객의 생산성을 향상시켰습니다.
+                                </p>
+                                <a class="con_box_box_a2" href="#">자세히 보기 &gt;</a>
+                            </li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+            <!-- content end -->
+            <!-- content_tow start -->
+            <div id="content_tow">
+                <h2>Find your solutions</h2>
+                <h3>삼성의 혁신을 성공적으로 지원해온 솔루션을 만나보세요</h3>
+                <div id="con_tow_in">
+                    <ul id="con_two_menu">
+                        <li onclick="con_two(0)">DT Engine</li>
+                        <li onclick="con_two(1)"> 업종</li>
+                    </ul>
+                    <div id="two_dt_box">
+                        <ul class="dt_box">
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/AI_offering_1.jpg">
+                                </div>
+                                <a href="#">인공지능/애널리틱스 〉</a>
+                                <p>간편하고 빠른 빅데이터 분석 솔루션으로 기업 내 산재해 있는 데이터에서 비지니스 인사이트를 확보하세요.</p>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/Home_offering3_1.png">
+                                </div>
+                                <a href="#">사물인터넷 〉</a>
+                                <p>사람과 사물을 연결할때 기업도 혁신합니다. 삼성SDS 웹사이트레 방문하셔서 프라이빗 사물인터넷 관련 솔루션을 살펴보세요.</p>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/Home_offering4.png">
+                                </div>
+                                <a href="#">블록체인 〉</a>
+                                <p>기업환경에 최적화되어 높은 확장성과 강력한 보안기능 및 빠른 처리속도를 자랑하는 블록체인 서비스를 만나 보세요.</p>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/Home_offering6.png">
+                                </div>
+                                <a href="#">클라우드 〉</a>
+                                <p>클라우드 도입컨설팅부터 마이그레이션,운영까지 토탈 클라우드 서비스를 경험하세요.</p>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/security_offering_1.jpg">
+                                </div>
+                                <a href="#">보안 〉</a>
+                                <p>지능화,고도화되는 보안 위험을 효과적으로 대응하는,삼성그룹의보안 서비스를 귀사에도 도입하세요.</p>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/Hero_Brity-Works_thumb.jpg">
+                                </div>
+                                <a href="#">자동화/협업(Brity Works) 〉</a>
+                                <p>기업용 업무 자동화 솔루션과 메신저,메일, 웹컨퍼런스 등의 협업 솔루션으로 업무방식을 혁신하고 효율성을 극대화하세요.</p>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/AI_offering_1.jpg">
+                                </div>
+                                <a href="#">인공지능/애널리틱스 〉</a>
+                                <p>간편하고 빠른 빅데이터 분석 솔루션으로 기업 내 산재해 있는 데이터에서 비지니스 인사이트를 확보하세요.</p>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/Home_offering3_1.png">
+                                </div>
+                                <a href="#">사물인터넷 〉</a>
+                                <p>사람과 사물을 연결할때 기업도 혁신합니다. 삼성SDS 웹사이트레 방문하셔서 프라이빗 사물인터넷 관련 솔루션을 살펴보세요.</p>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/Home_offering4.png">
+                                </div>
+                                <a href="#">블록체인 〉</a>
+                                <p>기업환경에 최적화되어 높은 확장성과 강력한 보안기능 및 빠른 처리속도를 자랑하는 블록체인 서비스를 만나 보세요.</p>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/Home_offering6.png">
+                                </div>
+                                <a href="#">클라우드 〉</a>
+                                <p>클라우드 도입컨설팅부터 마이그레이션,운영까지 토탈 클라우드 서비스를 경험하세요.</p>
+                            </li>
+
+                        </ul>
+                        <ul class="dt_box none">
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/Home_offering7.png">
+                                </div>
+                                <a href="#">인텔리전트 팩토라 〉</a>
+                                <p>복잡한 제조환경을 최적화하고 빅데이터 분석 기반으로 품질을 혁식하는 삼성SDS의 제조 IT역량을 확인하세요.</p>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/Home_offering8.png">
+                                </div>
+                                <a href="#">인텔리전트 리테일 〉</a>
+                                <p>구매 전 고객의 관심 유도 단계에서 구매 단계에 이르기까지 매장안에서의
+                                    고객경험 전체를 개선합니다.삼성SDS 웹사이트에 방문하셔서 리테일 관련 솔루션을 살펴보세요.
+                                </p>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/logistics_4.png">
+                                </div>
+                                <a href="#">스마트 물류 〉</a>
+                                <p>삼성SDS는 IT&물류 서비스 기업이며 SDS의 IT역량으로 물류서비스의 디지털혁신을 가속화 합니다.삼성SDS의 혁신적인 디지털 물류 서비스를
+                                    경험해보세요.
+                                </p>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/Home_offering10.png">
+                                </div>
+                                <a href="#">디지털 금융 〉</a>
+                                <p>AI,블록체인,클라우드 등이 탑재된 디지털금융플랫폼으로 차별화된 금융 서비스를 제안하고 구현해 드립니다.</p>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/Home_offering11.png">
+                                </div>
+                                <a href="#">디지털 헬스 〉</a>
+                                <p>환자 경험에 대한 치밀한 분석과 가장 앞선 기술을 바탕으로 설계된 차별화괸 헬스케어 솔루션을 만나보세요.</p>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/thumb_02.jpg">
+                                </div>
+                                <a href="#">EPC 〉</a>
+                                <p>BIM,Cloud,IoT,인공지능,AR,VR,드론,지능형 건설장비 등의 Digitar Technology 기반 EPC 산업의 Smart 화를 통해
+                                    경쟁력을
+                                    강화하세요.</p>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/artimgpreview.jpg">
+                                </div>
+                                <a href="#">디지털 홈 〉</a>
+                                <p>무선 및 IoT 기술을 접목하여, 집 안팎다양한 홈디바이스 연결을 통해 언제 어디서나 가족의 안전을 확인하고 편리한 생활을 도와드립니다.</p>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/artimgpreview2.jpg">
+                                </div>
+                                <a href="#">IT서비스 〉</a>
+                                <p>기업의 미래를 결정지을 디지털 기술을 기업 전반에 적용하여 전통적인 비즈니스 구조를 혁신하고 산업에서의 경쟁력을 강화하세요.</p>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/Home_offering7.png">
+                                </div>
+                                <a href="#">인텔리전트 팩토라 〉</a>
+                                <p>복잡한 제조환경을 최적화하고 빅데이터 분석 기반으로 품질을 혁식하는 삼성SDS의 제조 IT역량을 확인하세요.</p>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/Home_offering8.png">
+                                </div>
+                                <a href="#">인텔리전트 리테일 〉</a>
+                                <p>구매 전 고객의 관심 유도 단계에서 구매 단계에 이르기까지 매장안에서의
+                                    고객경험 전체를 개선합니다.삼성SDS 웹사이트에 방문하셔서 리테일 관련 솔루션을 살펴보세요.
+                                </p>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/logistics_4.png">
+                                </div>
+                                <a href="#">스마트 물류 〉</a>
+                                <p>삼성SDS는 IT&물류 서비스 기업이며 SDS의 IT역량으로 물류서비스의 디지털혁신을 가속화 합니다.삼성SDS의 혁신적인 디지털 물류 서비스를
+                                    경험해보세요.
+                                </p>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="./삼성SDS_files/Home_offering10.png">
+                                </div>
+                                <a href="#">디지털 금융 〉</a>
+                                <p>AI,블록체인,클라우드 등이 탑재된 디지털금융플랫폼으로 차별화된 금융 서비스를 제안하고 구현해 드립니다.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="btn_set">
+                    <a class="btn" onclick="second2()">〈</a>
+                    <a class="btn" onclick="second()">〉</a>
+                </div>
+            </div>
+
+
+            <!-- content_tow end -->
+            <!-- content_three start -->
+            <div id="content_three">
+                <div class="con_three_box">
+
+                    <img src="./삼성SDS_files/bg_Video1_IoT.png">
+
+                    <div class="con_three_text">
+                        <h2>소개 동영상</h2>
+                        <a href="#">IoT데이터 분석을 위한 일체형 플랫폼</a>
+                        <p>클라우드 기반의 IoT 공통 플랫폼은 다양한 디바이스들은 안전하고 신속하게 연결하고 연결괸 기기로부턴 수집되는
+                            데이터들을 효율적으로 처리합니다. Brightics IoT는 새로운 비지니스를 위한 개발기간은 단축하면서 빅데이터를
+                            활용한 서비스는 빠르게 실행할수 있게합니다.
+                        </p>
+                        <span><a href="#">동영상 보기 &gt;</a></span>
+                    </div>
+                </div>
+                <div class="con_three_box">
+
+                    <img src="./삼성SDS_files/bg_Video1_cloud.png">
+
+                    <div class="con_three_text">
+                        <h2>소개 동영상</h2>
+                        <a href="#">강력한 안정성과 최고의 성능,
+                            삼성SDS 하이브리드 클라우드 서비스
+                        </a>
+                        <p>기업 업무시스템에 클라우드를 활용하기 위해서는 99.99% 이상의 높은 가용성이 필요합니다
+                            글로벌하게 섬증된 아키텍처 기반으로 핵심 업무도 안심하고 클라우드 환경으로 전환하세ㅇ요.
+                        </p>
+                        <span><a href="#">동영상 보기 &gt;</a></span>
+                    </div>
+                </div>
+                <div class="con_three_box">
+
+                    <img class="three_img" src="./삼성SDS_files/bg_Video1_blockchain_1.png">
+
+                    <div class="con_three_text">
+                        <h2>소개 동영상</h2>
+                        <a href="#">가트너도 주목한 Nexledger,모즌 비지니스를
+                            혁신합니다.
+                        </a>
+                        <p>Nexledger는 4차 산업혁명의 핵심기술로 부각되는 블록체인 기술을 금융뿐 아니라,물류,제조,유통 등 타 산업 영역에도 범용적으로
+                            사용할 수 있는 기업용 블록체인 플랫폼입니다.지금 만나보세요.
+                        </p>
+                        <span><a href="#">동영상 보기 &gt;</a></span>
+                    </div>
+                </div>
+                <div id="btn_set2">
+                    <a class="btn" onclick="three_event()">〈</a>
+                    <a class="btn" onclick="three_event()">〉</a>
+                </div>
+                <a id="play" href="#"> ▶</a>
+            </div>
+
+            <!-- content_three end -->
+            <!-- content_four start -->
+            <div id="content_four">
+                <div id="white"></div>
+                <div>
+                    <h2>Awards&Rcognlrlon</h2>
+                    <ul id="con_four_box">
+                        <li>
+                            <div>
+                                <img src="./삼성SDS_files/award_Gartner_Market_Share_1.png">
+                            </div>
+                            <span>Gartner Market Share:IT Services,Sean Blackmire et al.,2020,Gartner</span>
+                            <a href="#">가트너는 2020년 4월 발간된 Gartner Market Share에서
+                                삼성SDS를 글로벌 25위,제조 IT 분야 글로벌 1위로 기록하였습니다</a>
+                            <span><a href="#">자세히 보기 &gt;</a></span>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="./삼성SDS_files/award_brandfinance_1.png">
+                            </div>
+                            <span>in Brand Finance IT Services 25,2020,Brand Finance</span>
+                            <a href="#">브랜드파이낸스는 삼성SDS를 IT서비스 기업
+                                가치 글로벌 11위로 기록하였습니다
+                            </a>
+                            <span><a href="#">자세히 보기 &gt;</a></span>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="./삼성SDS_files/award_reddot_Logistics_Risk_Watcher_1.png">
+                            </div>
+                            <span>Red Dot Design Award</span>
+                            <a href="#">삼성SDS Cwllo Logistics Risk Wathcher,레드닷
+                                (red-dot) 어워드 수상
+                            </a>
+                            <span><a href="#">자세히 보기 &gt;</a></span>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="./삼성SDS_files/award_the_Forrester_Wave_1.png">
+                            </div>
+                            <span>The Forrester Wavw™:Mulrimodal Predictive Analyrics and Machine
+                                Learnimg,Q3,Forrester
+                            </span>
+                            <a href="#">Brighrixs AI가 The Forrester Wave에서 영향력
+                                있는 11대 Predictive Analyrics and Machine
+                                Learning Provider로 인정 받았습니다
+                            </a>
+                            <span><a href="#"> 자세히 보기 &gt;</a></span>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="./삼성SDS_files/award_if_smarthome_1.png">
+                            </div>
+
+                            <span>IF Dedign Award 2020</span>
+                            <a href="#">삼성SDS Home IoT Security Solution,iF 디자인
+                                어워드 수강 (출시 제품명:SHT-3727)
+                            </a>
+                            <span><a href="#">자세히 보기 &gt;</a></span>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="./삼성SDS_files/award_Forbes_1.png">
+                            </div>
+                            <span>in Blockchain 50,2020, Forbes</span>
+                            <a href="#">포브스는 2년 연속 삼성SDS를 블록체인 선도 글로벌
+                                50대 기업으로 선정하였습니다
+                            </a>
+                            <span><a href="#">자세히 보기 &gt;</a></span>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="./삼성SDS_files/award_Gartner_Magic_Quadrant_1.png">
+                            </div>
+                            <span>Magic Quadrant for SAP S/4HANA Applocation Services,Worldwide,April
+                                2020,Gartner </span>
+                            <a href="#">삼성SDS는 Gartner Magic Quadrant의 'SAP S/4
+                                HANA Applicarion Services'분야애 글로벌 벤더로 둥재되었습니다</a>
+                            <span><a href="#">자세히 보기 &gt;</a></span>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="./삼성SDS_files/award_BrityMail_1.png">
+                            </div>
+                            <span>Red Dot Design Award</span>
+                            <a href="#">협업 솔루션의미래 컨셉인 '가상 개인비서'가 2019
+                                레드닷 디자인 어워드 『디자인 컨셉』부문에서
+                                베스트 오브더 베스트상을 수상하였습니다
+                            </a>
+                            <span><a href="#">자세히 보기 &gt;</a></span>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="./삼성SDS_files/award_Gartner_Market_Share_1.png">
+                            </div>
+                            <span>Gartner Market Share:IT Services,Sean Blackmire et al.,2020,Gartner</span>
+                            <a href="#">가트너는 2020년 4월 발간된 Gartner Market Share에서
+                                삼성SDS를 글로벌 25위,제조 IT 분야 글로벌 1위로 기록하였습니다</a>
+                            <span><a href="#">자세히 보기 &gt;</a></span>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="./삼성SDS_files/award_brandfinance_1.png">
+                            </div>
+                            <span>in Brand Finance IT Services 25,2020,Brand Finance</span>
+                            <a href="#">브랜드파이낸스는 삼성SDS를 IT서비스 기업
+                                가치 글로벌 11위로 기록하였습니다
+                            </a>
+                            <span><a href="#">자세히 보기 &gt;</a></span>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="./삼성SDS_files/award_reddot_Logistics_Risk_Watcher_1.png">
+                            </div>
+                            <span>Red Dot Design Award</span>
+                            <a href="#">삼성SDS Cwllo Logistics Risk Wathcher,레드닷
+                                (red-dot) 어워드 수상
+                            </a>
+                            <span><a href="#">자세히 보기 &gt;</a></span>
+                        </li>
+                    </ul>
+
+                    <div id="btn_set3">
+                        <a class="btn" onclick="con_four2()">〈</a>
+                        <a class="btn" onclick="con_four()">〉</a>
+                    </div>
+                </div>
+            </div>
+            <!-- content_four end -->
+            <!-- content_five start -->
+            <div id="content_five">
+                <div>
+                    <h2>이벤트</h2>
+                    <h3>삼성SDS 온라인 컨퍼런스</h3>
+                    <div id="con_five_box">
+                        <div id="img_box">
+                            <img src="./삼성SDS_files/event_2.png">
+                        </div>
+                        <a href="#">삼성SDS 온라인 컨퍼런스,REAL 2020에서 디지털전환사례를 만나 보세요</a>
+                        <div>온란인 컨퍼런스 REAL2020발표 내용을 동영상과 발표자료로 직접 확인하세요.</div>
+                        <span><a href="#"> 자세히 보기&gt;</a></span>
+                    </div>
+                </div>
+            </div>
+            <!-- content_five end -->
+
+            <!-- content_six start -->
+            <div id="content_six">
+                <h2>무엇이든 물어보세요</h2>
+                <p>삼성SDS가 성심성의껏 답변해드리겠습니다.</p>
+                <a href="#">문의하기</a>
+            </div>
+            <!-- content_six end -->
+
+            <!-- footer start -->
+            <div id="footer">
+                <div>
+                    <div id="footer_top">
+                        <ul>
+                            <li><a class="fot_tex_top" href="#">모든 오퍼링 보기&gt;</a></li>
+                            <li><a class="fot_tex" href="#">무료체험&gt;</a></li>
+                            <li><a class="fot_tex" href="#">사이트맵&gt;</a></li>
+                        </ul>
+                        <ul>
+                            <li><a class="fot_tex_top" href="#">회사정보</a></li>
+                            <li><a class="fot_tex" href="#">회사소개</a></li>
+                            <li><a class="fot_tex" href="#">공지사항</a></li>
+                            <li><a class="fot_tex" href="#">채용</a></li>
+                            <li><a class="fot_tex" href="#">Awards&Recognition</a></li>
+                        </ul>
+                        <ul>
+                            <li><a class="fot_tex_top" href="#">SDS NOW</a></li>
+                            <li><a class="fot_tex" href="#">인사이트리포트</a></li>
+                            <li><a class="fot_tex" href="#">언론보도</a></li>
+                            <li><a class="fot_tex" href="#">이벤트</a></li>
+                        </ul>
+                        <ul>
+                            <li><a class="fot_tex_top" href="#">고객지원</a></li>
+                            <li><a class="fot_tex" href="#">문의하기</a></li>
+                            <li><a class="fot_tex" href="#">기술지원</a></li>
+                            <li><a class="fot_tex" href="#">보안신고센터</a></li>
+                            <li><a class="fot_tex" href="#">제보하기</a></li>
+                        </ul>
+                        <div id="footer_top_left">
+                            <a href="#">패밀리사이트 ∨</a>
+                            <a href="#">위로 ∧</a>
+                        </div>
+                    </div>
+                    <div id="footer_bottom">
+                        <div id="footer_bottom_left">
+                            <ul>
+                                <li>개인정보처리방침</li>
+                                <li>|</li>
+                                <li>이용약관</li>
+                                <li>|</li>
+                                <li>서비스 이용약관</li>
+                                <li>|</li>
+                                <li>이메일무단수집거부</li>
+                                <li>|</li>
+                                <li>아이디어정책</li>
+                                <img src="https://image.samsungsds.com/global/ko/images/icon/2014_WA_mark3_black.png">
+                            </ul>
+                            <span>서울시 송파구 올림픽로 35길 125 삼성SDS(05510)</span>
+                            <span>대표전화:02-6155-3114</span>
+                            <p>CoppyrightⓒSAMSUNG SDS.ALL rights reserved.</p>
+                        </div>
+                        <div id="footer_bottom_right">
+                            <ul>
+                                <li>뉴스레터 구독신청</li>
+                                <li><img
+                                        src="https://image.samsungsds.com/module_src/images/icon/ico_footer_youtube.png">
+                                </li>
+                                <li><img
+                                        src="https://image.samsungsds.com/module_src/images/icon/ico_footer_linkedin.png">
+                                </li>
+                                <li><img
+                                        src="https://image.samsungsds.com/module_src/images/icon/ico_footer_facebook.png">
+                                </li>
+                                <li><img src="https://image.samsungsds.com/module_src/images/icon/ico_footer_naver.png">
+                                </li>
+                            </ul>
+                            <a href="#">Korea/한국어 ∨</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer end -->
+            <div id="quick" onmouseover="quick_move()" onmouseout="quick_move2()">
+                <div>
+                    <div>
+                        <img src="https://image.samsungsds.com/module_src/images/default/btn_fab_contact.svg">
+                        <a href="#">문의하기</a>
+                    </div>
+                    <div>
+                        <img src="https://image.samsungsds.com/module_src/images/default/btn_fab_try.svg">
+                        <a href="#">My Trial</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="hidden_bar_box6" class="none">
+                <div id="hidden_bar6">
+                    <div>
+                        <h3>Visit History</h3>
+                        <li>최근방문한 페이지가 최대 30개 저장됩니다.</li>
+                        <span>
+                            <img src="https://image.samsungsds.com/module_src/images/icon/ico_clear_black02.png">
+                            전체삭제
+                        </span>
+                    </div>
+                    <ul>
+                        <li>
+                            <p> DT엔진</p>
+                            <p> DT Engine | Digital | 삼성SDS</p>
+                        </li>
+                        <img
+                            src="https://image.samsungsds.com/kr/dt-engine/__icsFiles/afieldfile/2020/08/27/Home_offering5.png?queryString=20210223024701">
+                    </ul>
+                    <ul>
+                        <li>
+                            <p> 문의하기</p>
+                            <p> 문의하기</p>
+                        </li>
+                        <img
+                            src="https://image.samsungsds.com/resource/kr/images/SamsungSDS.jpg?queryString=20210107051510">
+                    </ul>
+                    <ul>
+                        <li>
+                            <p> 인공지능/애널리틱스</p>
+                            <p> 인공지능/애널리틱스|통합AI플랫폼|삼성SDS</p>
+                        </li>
+                        <img
+                            src="https://image.samsungsds.com/kr/ai/__icsFiles/afieldfile/2020/10/21/AI_offering_1.jpg?queryString=20210315011502">
+                    </ul>
+                    <ul>
+                        <li>
+                            <p> 무료체험</p>
+                            <p> 무료체험|Digital|삼성SDS</p>
+                        </li>
+                        <img
+                            src="https://image.samsungsds.com/kr/trial/__icsFiles/afieldfile/2020/12/07/dt-trial-gnb-kr.jpg?queryString=20210308104741">
+                    </ul>
+                    <ul>
+                        <li>
+                            <p> 자동화/협업(Brilty Works)</p>
+                            <p> 자동화/협업|기업 비지니스 솔루션|삼성SDS</p>
+                        </li>
+                        <img
+                            src="https://image.samsungsds.com/kr/workspace/__icsFiles/afieldfile/2021/02/03/Hero_Brity-Works_thumb.jpg?queryString=20210329044005">
+                    </ul>
+                    <ul>
+                        <li>
+                            <p> 라이브러리>인사이트 리포트>블로거>상세---</p>
+                            <p> 자동화 시대,일의 미래</p>
+                        </li>
+                        <img
+                            src="https://image.samsungsds.com/kr/insights/__icsFiles/afieldfile/2020/06/12/auto_machine_thumbnail.jpg?queryString=20210401112311">
+
+                    </ul>
+
+                </div>
+            </div>
+
+            <div id="hidden_bar_box8" class="none">
+                <div id="hidden_bar8">
+                    <div>
+                        <a href="#">오퍼링</a>
+                        <a href="#">업종</a>
+                    </div>
+                    <div>
+                        <a href="#">DT 엔진 &gt;</a>
+                        <a href="#">무료체험 &gt;</a>
+                    </div>
+                    <div>
+                        <a href="#">라이브러리</a>
+                        <a href="#">뉴스룸</a>
+                        <a href="#">회사정보</a>
+                        <a href="#">My Trial &gt;</a>
+                    </div>
+                    <div>
+                        <a href="#">문의하기</a>
+                    </div>
+                </div>
+                <div id="hidden_bar8_2">
+                    <div>
+                        <a href="#">인공지능/애널리틱스</a>
+                        <ul class="text_8_out">
+                            <li>인공지능/애널리틱스 개요</li>
+                            <li>Brightics MAchine Learning</li>
+                            <li>Brightics Deep Leaming</li>
+                            <li>Brightics Data Preparation</li>
+                            <li>Brightics Data Hub</li>
+                            <li>Brightics Bisual Search</li>
+                            <li>Brightics Analyrics Servives</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">사물인터넷</a>
+                        <ul>
+                            <li>사물인터넷 개요</li>
+                            <li>Brightics IoT</li>
+                            <li>Brightics IoT BMS</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">블록체인</a>
+                        <ul>
+                            <li>블록체인 개요</li>
+                            <li>Nexledger Universal</li>
+                            <li>Nexledger Accelerator</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">코그니티브</a>
+                        <ul>
+                            <li>AI Cignitive Services</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">클라우드</a>
+                        <ul>
+                            <li>클라우드 개요</li>
+                            <li>Hybrid Cloud Services</li>
+                            <li>Cliud Transformation Services</li>
+                            <li>Cliud Management Services</li>
+                            <li>Cliud Applocation Services</li>
+                            <li>IT ingra Servies</li>
+                            <li>Network Services</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">보안</a>
+                        <ul>
+                            <li>보안 개요</li>
+                            <li>보안컨설팅</li>
+                            <li>보안관제서비스</li>
+                            <li>클라우드 보안 서비스</li>
+                            <li>보안 솔루션</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">자동화/협업(Brity Works)</a>
+                        <ul>
+                            <li>자동화/협업(Brity Works)개요</li>
+                            <li>Brity RPA</li>
+                            <li>Brity Assistant</li>
+                            <li>Brity Messenger</li>
+                            <li>Brity Mail</li>
+                            <li>Brity Meeting</li>
+                            <li>Brity Drive</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#"">Digital Accelerator</a>
+                        <ul>
+                            <li>Digital Accelerator 개요</li>
+                            <li>CX Innovation</li>
+                            <li>Agile Approach</li>
+                            <li>Develipment Platfrom</li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">DT 서비스</a>
+                        <ul>
+                            <li>DT 서비스 개요</li>
+                            <li>DT Consulting</li>
+                            <li>Smart ERP</li>
+                            <li>Digital SCM</li>
+                            <li>Digital Marketing</li>
+                            <li>Digital EHS</li>
+                            <li>Digital HCM</li>
+                            <li>Digital ITO</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">인텔리전트 팩토리</a>
+                        <ul>
+                            <li>인텔리전트 팩토리 개요</li>
+                            <li>Nexplant 3D Excellence</li>
+                            <li>Nexplant PLM</li>
+                            <li>Nexplant SLM</li>
+                            <li>Nexplant MES</li>
+                            <li>Nexplant EAM</li>
+                            <li>Nexplant Visual Insight</li>
+                            <li>Nexplant OT Viewer</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">인텔리전트 리테일</a>
+                        <ul>
+                            <li>인텔리전트 리테일 개요</li>
+                            <li>Nexshop Behavior Sensing</li>
+                            <li>Nexshop Digital Expeience</li>
+                            <li>Nexshop Omni-Channel</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">스마트 물류</a>
+                        <ul>
+                            <li>스마트 물류 개요</li>
+                            <li>Gloval Supply Chain</li>
+                            <li>Freight Forwarding</li>
+                            <li>Warehousing&Distribution</li>
+                            <li>e-Commerce</li>
+                            <li>project Logistics</li>
+                            <li>Cello</li>
+                            <li>Cello Square</li>
+                            <li>Cello Trust</li>
+                            <li>Cello Digital Services</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">디지털 금융</a>
+                        <ul>
+                            <li>디지털 금융 개요</li>
+                            <li>Nexfinance</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">디지털 홈</a>
+                        <ul>
+                            <li>Smart Home</li>
+                            <li>Smart Lock</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">디지털 헬스</a>
+                        <ul>
+                            <li>디지털 헬스 개요</li>
+                            <li>Nexmed EHR</li>
+                            <li>S-Patch Cardio</li>    
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

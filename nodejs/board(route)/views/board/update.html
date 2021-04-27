@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/write.css">
+</head>
+
+<body>
+
+    <div id="wrap">
+        <div id="header">
+            <h2> 게시판 수정하기</h2>
+        </div>
+        {% for item in list %}
+        <form action="/board/update" method="post">
+            <ul>
+                <li class="text">글제목</li>
+                <li><input type="text" name="subject" id="subject" value="{{item.subject}}"></li>
+            </ul>
+            <ul>
+                <li class="text">작성자</li>
+                <li> <input type="text" name="board_name" id="board_name" value="{{item.board_name}}"></li>
+            </ul>
+            <ul>
+                <li class="text">내용</li>
+                <li>
+                    <textarea name="content" id="content" value="{{item.content}}"></textarea>
+                </li>
+            </ul>
+            {% endfor %}
+            <a href="/list" class="btn">리스트 가기</a>
+            <input type="hidden" name="idx" value="{{idx}}">
+            <input type="submit" value="수정하기" class="btn">
+        </form>
+     
+    </div>
+</body>
+
+</html>
