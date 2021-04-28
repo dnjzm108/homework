@@ -5,7 +5,7 @@ const router = express.Router();
 let connection =mysql.createConnection({
     host:'localhost',
     user:'root',
-    password:'1541',
+    password:'0000',
     database:'homepage'
 });
 connection.connect();
@@ -15,7 +15,7 @@ router.get('/',(req,res)=>{
 });
     
 router.get('/list',(req,res)=>{
-    connection.query('select idx,subject,board_name,content,hit,date_format(today,"%Y-%m-%d") as today from board2 order by idx desc', (error, results) => {
+    connection.query('select idx,subject,board_name,content,hit,date_format(today,"%Y-%m-%d") as today from board order by idx desc', (error, results) => {
         if (error) {
             console.log(error);
         } else {
@@ -32,7 +32,7 @@ router.get('/list',(req,res)=>{
 });
 router.get('/view',(req,res)=>{
     connection.query(`update board set hit = hit + 1 where idx = ${req.query.idx}`)
-    connection.query(`select idx,subject,board_name,content,hit,date_format(today,"%Y-%m-%d") as today from board2 where idx='${req.query.idx}'`, (error, results) => {
+    connection.query(`select idx,subject,board_name,content,hit,date_format(today,"%Y-%m-%d") as today from board where idx='${req.query.idx}'`, (error, results) => {
         if (error) {
             console.log(error);
         } else {
@@ -47,7 +47,7 @@ router.get('/write',(req,res)=>{
     res.render('./board/write.html')
 })
 router.post('/write',(req,res)=>{
-    connection.query(`insert into board2(subject,board_name,content,hit) values('${req.body.subject}','${req.body.board_name}','${req.body.content}',0)`, (error, results) => {
+    connection.query(`insert into board(subject,board_name,content,hit) values('${req.body.subject}','${req.body.board_name}','${req.body.content}',0)`, (error, results) => {
         if (error) {
             console.log(error);
         } else {
@@ -57,7 +57,7 @@ router.post('/write',(req,res)=>{
 });
 
 router.get('/update',(req,res)=>{
-    connection.query(`select subject,board_name,content from board2 where idx='${req.query.idx}'`,(error, results) => {
+    connection.query(`select subject,board_name,content from board where idx='${req.query.idx}'`,(error, results) => {
         if (error) {
             console.log('error');
         } else {
@@ -70,7 +70,7 @@ router.get('/update',(req,res)=>{
 });
 
 router.post('/update', (req, res) => {
-    connection.query(`update board2 set subject='${req.body.subject}',board_name='${req.body.board_name}',content='${req.body.content}' where idx='${req.body.idx}'`, (error, results) => {
+    connection.query(`update board set subject='${req.body.subject}',board_name='${req.body.board_name}',content='${req.body.content}' where idx='${req.body.idx}'`, (error, results) => {
         if (error) {
             console.log('error');
         } else {
@@ -79,7 +79,7 @@ router.post('/update', (req, res) => {
     });
 });
 router.post('/del', (req, res) => {
-    connection.query(`delete from board2 where idx='${req.query.idx}'`, (error, results) => {
+    connection.query(`delete from board where idx='${req.query.idx}'`, (error, results) => {
         if (error) {
             console.log(error);
         } else {
