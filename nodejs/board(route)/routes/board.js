@@ -14,7 +14,7 @@ let pool = mysql.createPool(config);
 router.get('/',(req,res)=>{
     res.render('./board/index.html')
 });
-    
+
 
 router.get('/list',(req,res)=>{
     pool.getConnection((err,connection)=>{
