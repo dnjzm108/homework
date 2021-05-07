@@ -6,6 +6,7 @@ const controller = require('./user.controller');
 // join login info
 router.get('/join',controller.join)
 router.get('/login',controller.login)
+router.get('/logout',controller.logout)
 router.get('/info',controller.info)
 router.post('/join_success',controller.join_success)
 router.post('/login_check',controller.login_check)

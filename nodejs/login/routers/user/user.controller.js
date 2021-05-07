@@ -22,6 +22,15 @@ let login = (req, res) => {
     res.render('./user/login.html')
 }
 
+let logout = (req,res) => {
+    delete req.session.isLogin;
+    delete req.session.uid;
+
+    req.session.save(()=>{
+        res.redirect('/')
+    })
+}
+
 let login_check = async (req, res) => {
     let userid = req.body.userid;
     let userpw = req.body.userpw;
@@ -52,5 +61,6 @@ module.exports = {
     join_success: join_success,
     login: login,
     info: info,
-    login_check: login_check
+    login_check: login_check,
+    logout: logout
 }

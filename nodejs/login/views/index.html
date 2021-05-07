@@ -8,7 +8,7 @@
 </head>
 <body>
   {% if isLogin %}
-  <h1>{{userid}}님 환영합니다</h1> <a href="#">로그아웃</a> 
+  <h1>{{userid}}님 환영합니다</h1> <a href="/user/logout">로그아웃</a> 
   {% else %}
     <a href="/user/login">로그인</a>
     <a href="/user/join">회원가입</a>
