@@ -51,8 +51,11 @@ let login_check = async (req, res) => {
 let info = async (req, res) => {
     let userlist = await User.findAll({});
     console.log(userlist)
-    res.render('./user/info.html', {
-        userList: userlist,
+    // res.render('./user/info.html', {
+    //     userList: userlist,
+    // })
+    res.json({
+        userlist,
     })
 }
 

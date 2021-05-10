@@ -6,11 +6,13 @@ const app = express();
 const router = require('./routers/index');
 const nunjucks = require('nunjucks');
 const session = require('express-session')
+const cors = require('cors');
 
 app.set('view engine','html');
 nunjucks.configure('views',{
     express:app,
 })
+app.use(cors());
 app.use(session({
     secret:'aaa',
     resave:false,

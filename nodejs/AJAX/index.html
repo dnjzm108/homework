@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js
+    "></script>
+</head>
+
+<body>
+    <button id="btn">데이터 가져오기</button>
+    <table id="list">
+        <tr>
+            <td>아이디</td>
+            <td>패스워드</td>
+            <td>이름</td>
+        </tr>
+    </table>
+
+    <script type="text/javascript">
+        const table = document.querySelector('#list')
+        let a = 0 ;
+        function getData() {
+            axios.get('http://localhost:3000/user/info') //Promise 
+                .then((res) => {
+                    if(a==4){
+                        a=0
+                    }
+                    let list = res.data.userlist;
+                    console.log(list);
+                        const tr = document.createElement('tr');
+                        const idTd = document.createElement('td');
+                        const pwTd = document.createElement('td');
+                        const nameTd = document.createElement('td');
+
+                        idTd.innerHTML = list[a].userid;
+                        pwTd.innerHTML = list[a].userpw;
+                        nameTd.innerHTML = list[a].username;
+
+                        tr.appendChild(idTd);
+                        tr.appendChild(pwTd);
+                        tr.appendChild(nameTd);
+
+                        table.appendChild(tr)
+                        a++;
+                })
+
+        }
+ /*axios cdn*/
+        const btn = document.querySelector('#btn');
+        btn.addEventListener('click', getData)
+    /*
+        const xhr = new XMLHttpRequest();
+    
+       xhr.onreadystatechange = function(){
+          if(this.readyState === 4){
+              console.log(this.responseText);
+          }
+       }
+    
+        xhr.open('get','http://localhost:3100') //xhr open 매서드 사용하면 => 요청 (매서드,url)
+        xhr.send();
+        */
+        /*
+        const root = document.querySelector('#root');
+                     for (let i = 0; i < res.data.length; i++) {
+                         const div = document.createElement('div');
+                         div.innerHTML = res.data[i].title;
+                         root.appendChild(div);
+                         */
+    </script>
+
+</body>
+
+</html>

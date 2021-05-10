@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js">
+    /*
+     const xhr = new XMLHttpRequest();
+      
+     xhr.onreadystatechange=function(){
+          if(this.readyState===4){
+          console.log(this.responseText);
+          }
+      }
+  
+      xhr.open('get','http://localhost:3200')
+      xhr.send();
+      */
+    </script>
+</head>
+<body>
+<button id="btn">불러오기</button>
+<table id="list">
+    <tr>
+        <td>이름</td>
+        <td>나이</td>
+        <td>내용</td>
+    </tr>
+</table>
+
+    <script type="text/javascript">
+    let a =0;
+    const table = document.querySelector('#list');
+    function getData(){
+        if(a==2){
+            a=0
+        }
+    axios.get('http://localhost:3200')
+    .then((res)=>{
+      let list=res.data.result;
+      const tr = document.createElement('tr');
+      const nameTd = document.createElement('td');
+      const ageTd = document.createElement('td');
+      const commentTd = document.createElement('td');
+
+      nameTd.innerHTML = list[a].name;
+      ageTd.innerHTML = list[a].age;
+      commentTd.innerHTML = list[a].comment;
+
+      tr.appendChild(nameTd);
+      tr.appendChild(ageTd);
+      tr.appendChild(commentTd);
+
+      table.appendChild(tr);
+      a++
+    })
+}
+const btn = document.querySelector('#btn');
+btn.addEventListener('click',getData)
+/*  console.log(res);
+       const root = document.querySelector('#root');
+       for(let i = 0; i<res.length; i++ ){
+           const div = document.createElement('div');
+           div.innerHTML = res[i].id;
+           root.appendChild(div);
+       }*/
+    </script>
+    
+</body>
+</html>
