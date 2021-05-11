@@ -31,7 +31,7 @@ sequelize.sync({ force:false, })
 // localhost:3000
 // localhost:3000/user
 
-app.use('/',router); // 비동기
+app.use('/',router); // 비동기 미들웨어에 두가지 미들웨어가 들어갈수있다
 
 app.listen(3000,()=>{
     console.log('server start port 3000');

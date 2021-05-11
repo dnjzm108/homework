@@ -16,7 +16,7 @@
                     아이디
                 </td>
                 <td>
-                    <input type="text" name="userid">
+                    <input type="text" name="userid" id="userid">
                 </td>
             </tr>
             <tr>
@@ -24,12 +24,31 @@
                     비밀번호
                 </td>
                 <td>
-                    <input type="password" name="userpw">
+                    <input type="password" name="userpw" id="userpw">
+                    <div id="msg"></div>
                 </td>
+               
             </tr>
         </table>
     <input type="submit" value="로그인">
     </form>
     <a href="/">돌아가기</a>
+     {% if flag == '0' %}
+    <script type="text/javascript">
+    //alert('아이디와 패스워드를 확인해주세요')
+    const id = document.querySelector('#userid');
+    const pw = document.querySelector('#userpw');
+    const msg = document.querySelector('#msg');
+    id.setAttribute('style','background:yellow;');
+    pw.setAttribute('style','background:yellow;');
+    msg.innerHTML='아이디 와 비밀번호를 확인하세요';
+    id.addEventListener('focus',()=>{
+        id.setAttribute('style','background:#fff;');
+    })
+    pw.addEventListener('focus',()=>{
+        pw.setAttribute('style','background:#fff;');
+    })
+    </script>
+    {% endif %}
 </body>
 </html>
