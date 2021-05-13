@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router(); // == app
 
 router.get('/',(req,res)=>{
-    res.render('index.html',{
+    res.render('./board/index.html',{
         title:'안녕'
     })
 });

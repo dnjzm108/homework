@@ -10,6 +10,6 @@ nunjucks.configure('views',{
 });
 app.use('/',main);
 
-app.listen(3100,()=>{
+app.listen(3300,()=>{
     console.log('server start port:3100');
 })

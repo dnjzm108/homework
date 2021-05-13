@@ -17,6 +17,10 @@ app.use(session({
     secret:'aaa',
     resave:false,
     saveUninitialized:true,
+    cookie:{
+        httpOnly:true,// js 코드로 쿠키를 가져오지 못하게
+        secure:false //https 에서만 가져오도록 할 것인가?
+    }
 }))
 app.use(bodyParser.urlencoded({extended:false}));
 // seqeulize.sync -> new Promise 객체로 반환이됩니다.

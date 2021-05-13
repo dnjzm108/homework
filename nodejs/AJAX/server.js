@@ -9,6 +9,6 @@ app.get('/',(req,res)=>{
     })
 })
 
-app.listen(3100,()=>{
-    console.log('server start port: 3100');
+app.listen(3200,()=>{
+    console.log('server start port: 3200');
 })
