@@ -5,11 +5,11 @@ const passport = require('passport');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const passportConfig = require('./passport/index');
-const {sequelize} = require('./models');
+const {sequelize, User} = require('./models');
 
 const app = express();
 app.use(bodyParser.urlencoded({extends:false}));
-sequelize.sync({force:true})
+sequelize.sync({force:false})
 .then(()=>{
     console.log('접속완료');
 })
@@ -41,11 +41,25 @@ app.get('/board',(req,res)=>{
     res.render('./login.html');
 })
 
-app.get('/',(req,res)=>{
-    res.render('./index.html')
+app.get('/', async (req,res)=>{
+   
+   let find = await User.findAll({});
+   console.log(find);
+    res.render('./index.html',{
+        find,
+    })
 })
-app.post('/',(req,res)=>{
-    console.log(req.body.id);
+app.post('/',async(req,res)=>{
+    let body = req.body;
+    let create = await User.create({
+        userid:body.userid,userpw:body.userpw,username:body.username,
+    })
+    .then(
+        console.log(create)
+    )
+    .catch(
+        alert('내용이 없습니다')
+    )
     res.redirect('/');
 })
 
