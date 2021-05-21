@@ -44,7 +44,6 @@ app.get('/board',(req,res)=>{
 app.get('/', async (req,res)=>{
    
    let find = await User.findAll({});
-   console.log(find);
     res.render('./index.html',{
         find,
     })
@@ -54,12 +53,7 @@ app.post('/',async(req,res)=>{
     let create = await User.create({
         userid:body.userid,userpw:body.userpw,username:body.username,
     })
-    .then(
-        console.log(create)
-    )
-    .catch(
-        alert('내용이 없습니다')
-    )
+
     res.redirect('/');
 })
 
