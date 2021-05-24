@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="/login" method="post">
+    <input type="text" name="userid">
+    <input type="password" name="userpw">
+    <input type="submit" value="로그인">
+    </form>
+
+<button id="req">요청테스트</button>
+<span class="root">
+
+</span>
+    <script type="text/javascript">
+    const btn = document.querySelector('#req');
+    btn.addEventListener('click',()=>{
+        console.log('req click!');
+        //첫번째 인자값 url 두번째 값은 options ->object
+        fetch('http://localhost:3000/login2',{
+            method:'POST',
+            headers:{'Content-Type':'application/json'},
+            // headers:{'Content-Type':'application/x-www-form-urlencoded'},
+            body:JSON.stringify({a:1,b:2}) 
+            
+        }) //Promise Object
+        .then(data=>{
+            console.log(data); //요청완료  처리결과에 대한 객체 반환
+            return data.json();
+        })
+        .then(json=>{
+            console.log(json);
+            json.test  //ok
+            const root = document.querySelector('.root');
+            root.innerHTML = json.test;
+        })
+    })
+    </script>
+</body>
+</html>
