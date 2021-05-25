@@ -1,0 +1,82 @@
+<h1>GET요청</h1>
+<form action="/login" method="get">
+<input type="text" name="userid">
+<input type="password" name="userpw">
+<input type="submit" value="GET">
+</form>
+
+<!-- POST요청하기 -->
+ <h1>POST 요청하기</h1>
+ <form action="/login" method="post">
+    <input type="text" name="userid">
+    <input type="password" name="userpw">
+    <input type="submit" value="POST">
+    </form>
+
+
+    <!-- 비동기 활용하기 -->
+
+    <h1>비동기 활용하기 get</h1>
+    <button id="btn">통신하기</button>
+    <div id="lodding" style="display: none;">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAdVBMVEUAAAAUFBQrKytAQEBVVVVpaWmVlZXq6uqqqqqAgIDT09O+vr5YWFhsbGwuLi5NTU0KCgooKCgODg5ISEgjIyOwsLCGhoacnJwYGBg0NDQ5OTnx8fFdXV1kZGTb29u8vLwdHR2SkpLIyMh8fHzk5OSkpKR1dXWkgjQEAAAE1UlEQVR4nO3d63KyOhgFYBW0VDnKSRQQPN3/JW6IgHltoRr9ummynn91YoZZkzNIJxMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4nyWXyLIfKOe67j+/lpGbL3e1QzZczJ1eKZ2Xsfu42p2Hiq2nrfVvXdn4dFlVacX9xW5ZKZxWdsuqSkvvK+ZOear2xMMHH9aqr9iahKVo09p+ECevp9yU+tVrHA19R8Lamd8Xc+/CUrMfpndh9SwfEFbNoWF9ON8XQ1i1ICdZ5X3lMGbVDLJ06F2WYjasJWQyDHrLoWHVLG4F3zMX1vhRS7kRy7Pb9mGernHtTv7QF9yvWalxBuEYyzzP98fmz3J5Op2W0U/fcsl4tfFmtj0LpB++4jxf1vLVtvlk7T3ZSFzPnjF28e6rGxfjGlWd1iERq8Kddez+SUECxy6rKq29WB3BjEtr897rG5PNYcnJU5E6pjPi3Zc4HmlOwjJE6ghIVra8666ShLXsPcEa4tGWVbz5EscjvgtLpFnchSXvEI+W9YSMhhWK1KHMmBXQ2XAuUsfdbCjxrof0Q6FeeNcPi7de3sjsb2nlmlgVayWGdyZs0sqXglnxaUme1WRirZbVXvpQvlJHwaLyJN7rdJI0Gzy9esRawWNAAPhtaRTHUe/TMs8q7CSR9rA0XR1WlcP+5eG9ttEaxTtqG5sji4rFJbTPoYI2K83ve/rmD8u6rKq0eh5reFyhcaRbm7r7FUfovIG35cMS3guMlXXgw3q1aW1IVtI1rXhF/HhXdZhNwxK8qTZaIQ1r8VptCQ1r+/M3/hSE9YQFuuHj3jvAFzQs2QZ4LB2e8d5FKb928GVrWJN/t93RpHzewdxjI/0EHNEAwN8zc/SX9yeF58n7SMiNGRthaJwvr9Sx1XXT1B0p1wy8MjSY8Cy8odvops6Yb1mDjNeiyaommNZG78idlsVlZQz83n6Io3NpyXY4wynOXFZGKLQ8nZk6T96fpOghCUvoUMsnWZkS3gdrXEhYYv3QoWHJ2w8/78IS6EPuXVjynWW1LLSsxznvGLPIAC/xmDWls6HQeWlAwnIkfv4v45pWKPhYKd+0TNnu6xBRl1Z4FuxBUyWGd+YYXuMK43Yb7G4e6kpu98Tt1DHVyGoy0SIjDMNF++KZNCrLMhp4T0HzrTSbZ1kbTuKYpqnLeFfnq8BrF1jbMl7U4nLwHYnB3LLmFWvedl1XvTeH+NeoWFwDCyaPJcVYUo/oQ4JycVP2nnyu5zwVflbxHSvmwop777z6FpeV9fLN7L9pwzesqml1n/vW5WL5XUvLSMvKlBusmCQmYS2aMd4/Rp+V6NgcgwYkq7mlxBz4hUbDiq8LA5NFxeK6LihmFg1L+tsU39retSw2H2pdVlVaLD7vLix5t85DAppVyea5T6L+ZE3HLFWnw08SFntJlB/xWUVs2NLJbPjjYl9SGgmLLTdT0rAi9rYa0g8feh26lLiFVnzdLFq0G1rsQ26hpeoyq9al1WT1fVi3tFTOqh6j4lrUniekdMxqXxplp1YtVXZn2Ah83S+6v7Y0rNvueppsE0XnwX4XPqyXHrVRgM0vSpWd+R6l3cKS/tT4dbYVVa0reuwfzMDMyTL5H+sDAAAAAAAAAAAAAAAAAAAAAAAAAACQ3X8Od1oiljvI1QAAAABJRU5ErkJggg==">
+    </div>
+    <div id="getroot"></div>
+    <script type="text/javascript">
+    const btn = document.querySelector('#btn');
+    btn.addEventListener('click',btnFn);
+    function btnFn(){
+        console.log('req click');
+        document.querySelector('#lodding').style.display='block'
+        let options = {
+            method:'GET',
+        }
+        //promiss Object
+        fetch('http://localhost:3500/login?userid=asdf&userpw=asdf',options)
+        .then(data=>{
+            console.log(data);
+            if(data.status == 404){
+                const root = document.querySelector('#getroot');
+            root.innerHTML ='페이지가 존재하지않음 ';
+            }
+            return data.text();
+        })
+        .then(text=>{
+            document.querySelector('#lodding').style.display='none'
+            console.log(text);
+            const root = document.querySelector('#getroot');
+            root.innerHTML += text+'<br />';
+        })
+    }
+    </script>
+
+    <h1>비동기 활용하기 POST</h1>
+    <button id="btn2">통신하기</button>
+    <div id="postroot"></div>
+    <script type="text/javascript">
+    const btn2 = document.querySelector('#btn2');
+    btn2.addEventListener('click',btnFn2);
+    function btnFn2(){
+        console.log('req click');
+        let options ={
+            method:'POST',
+            headers:{
+                //'content-type':'application/x-www-form-urlencoded',
+                'content-type':'application/json',
+                //API 사용시 json 형식으로 보내야한다.
+            },
+            //body:JSON.stringify({userid:'asdf',userpw:'adfsdfa'}),
+            //body:'userid=asdfa&userpw=asdfasdf',
+            body:`{"userid":"asdfa","userpw":"asdfasdf"}`
+            //요청문서는 항상 String 만 가능합니다.
+        }
+        fetch('http://localhost:3500/login',options)
+        .then(data=>{
+            return data.text();
+        })
+        .then(text=>{
+            const root = document.querySelector('#postroot');
+            root.innerHTML +=text+'<br />';
+        })
+    }
+    </script>
