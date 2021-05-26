@@ -27,6 +27,10 @@
         }
         let result = await fetch('https://dapi.kakao.com/v2/local/search/address.json?analyze_type=similar&page=1&size=10&query='+address.value,options);
         let json = await result.json();
+        addressList.innerHTML=""
+        if(json.documents.length == 0){
+            addressList.innerHTML="<li>결과값이 존재하지 않습니다.</li>"
+        }
         json.documents.forEach(v=>{
             let li=document.createElement('li');
             li.innerHTML=v.address_name;
@@ -47,13 +51,20 @@
             }
         }
         let result =await fetch(url,options);
-        let json = await result.json()
-        let address_name = json.documents[0].road_address.address_name;
-        let zone_no = json.documents[0].road_address.zone_no;
+        let json = await result.json();
 
-        document.querySelector('#address1').value=address_name;
-        document.querySelector('#addressNum').value=zone_no;
-        document.querySelector('#address2').focus();
+        if(json.documents[0].road_address==null){
+            let address_name = json.documents[0].address.address_name;
+            document.querySelector('#address1').value=address_name;
+        }else{
+            let address_name = json.documents[0].road_address.address_name;
+            let building_name = json.documents[0].road_address.building_name;
+            let zone_no = json.documents[0].road_address.zone_no;
+            document.querySelector('#address1').value=`${address_name}${building_name}`;
+            document.querySelector('#addressNum').value=zone_no;
+            document.querySelector('#address2').focus();
+        }
+        
 
     }
     </script>
