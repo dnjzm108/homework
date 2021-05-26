@@ -1,0 +1,20 @@
+<script type="text/javascript">
+    /* 
+    https://dapi.kakao.com/v2/local/search/address.json?analyze_type=similar&page=1&size=10&query=
+    headers -> Authorization: KakaoAK {REST_API_KEY}
+    api key -> d71e574bb53209815ff9a1eedf9d85dd
+    */ 
+    document.addEventListener('DOMContentLoaded',init);
+    async function init(){
+        let options = {
+            method:'GET',
+            headers:{
+                "Authorization":"KakaoAK d71e574bb53209815ff9a1eedf9d85dd"
+            }
+        }
+       let result = await fetch('https://dapi.kakao.com/v2/local/search/address.json?analyze_type=similar&page=1&size=10&query=오금로64길',options)
+       let json = await result.json();
+
+       console.log(json);
+    }
+    </script>
