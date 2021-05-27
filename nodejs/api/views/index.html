@@ -59,6 +59,7 @@
            li.dataset.x=v.x;
            li.dataset.y=v.y;
            li.addEventListener('click',getAddressDetail);
+           li.addEventListener('click',map);
            addressList.appendChild(li);
        })
     }
@@ -102,16 +103,42 @@
     <input type="text" name="address1" id="address1" size="40" placeholder="주소">
     <input type="text" name="address2" id="sddress2" placeholder="상세주소">
 
-    <div id="map" style="width:500px;height:400px;"></div>
+
+    <div id="map" style="width:500px; height:400px;"></div>
+    <button id="corona">코로나 버튼</button>
+    <ul id="coronaList">
+        <li>코로나 현황</li>
+    </ul>
+
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0c9191fdad2d2bf34fafad7d9abaf6c3"></script>
 	<script>
+        function map(){
+            let x = this.dataset.x;
+            let y = this.dataset.y;
 		var container = document.getElementById('map');
 		var options = {
-			center: new kakao.maps.LatLng(33.450701, 126.570667),
-			level: 3
+			center: new kakao.maps.LatLng(y,x),
+			level: 2
 		};
 
 		var map = new kakao.maps.Map(container, options);
+    }
+
+    let corona = document.querySelector('#corona');
+    corona.addEventListener('click',coronaBtn);
+    async function  coronaBtn(){
+        let ul = document.querySelector('#coronaList')
+        let result = await fetch('https://capi.msub.kr',{
+            method:'GET'
+        })
+        let json = await result.json();
+        console.log(result);
+        console.log(json);
+        let li = document.createElement('li');
+        li.innerHTML=`업데이트 시간:${json.today.update}`;
+        li.innerHTML=`사망자:${json.today.dead}`;
+        ul.appendChild(li);
+    }
 	</script>
 </body>
 </html>

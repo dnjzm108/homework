@@ -12,7 +12,7 @@ nunjucks.configure('views',{
 })
 
 app.get('/',(req,res)=>{
-    res.render('test')
+    res.render('index')
 })
 
 app.listen(3000,()=>{
