@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        // filter , find , map 모든원소에 모든값에 변화를 주고싶다
+        //           3      6        5        10
+        let arr = ['foo','mandoo','ingoo','blockchain'];
+        let result = [];
+
+        result = arr.map((v, i)=>{
+            return `${v+(i+1)}`;
+        });
+
+        
+
+    
+        /*  HTML Class 을 gnb1 gnb2 gnb3 gnb4 gnb5 => array(gnb1,gnb2,gnb3,gnb4,gnb5) */ 
+        let hero = ['hero','hero','hero','hero','hero'];
+        let result2 = [];
+
+        result2 = hero.map((v,i)=>{
+            return `${v+(i+1)}`;
+        });
+
+        //String.length Array.length;
+        
+        result = arr.map((v)=>{
+            return v.length;
+        });
+
+        console.log(result);
+        result = [];
+        
+
+        arr.forEach((v)=>{
+            result.push(v.length);
+        });
+
+        //console.log(result);
+
+
+
+        let txt = ['1','2','3','4','5','6','7','8','9','10']; // 01 02 03 04 05 06 07 08 09 10
+
+        result = [];
+        result = txt.map((v)=>{
+            return v.padStart(2,0); // 항상 조건문이있는부분은 뭔가 매서드 존재할수있습니다. 그래서 구글링한번 해보는 연습도 해보시면좋아요.
+                                    // 글자앞에 0 붙히기.
+        })
+        console.log(result);
+
+        console.log('result : ','1'===1); 
+        //말이안됩니다. 
+        //언어가 저급해서그래요. 
+        // == 와 === 차이는 == 값을 비교하는거구요 === 변수안에있는 타입까지 비교해서 같아야지만 정확한 비교가 됩니다.
+
+/*
+        let arr3 = [];
+        arr.forEach((v)=>{
+            arr3.push(v.length);
+        });
+        console.log(arr2);
+*/      
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

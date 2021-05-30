@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+    let arr = [1,2,3,4,5,6,7,8,9,10]; // 1+2+3+4+5+6+7+8+9+10 = 55 
+    let arr3 = ['asdfasdf','asdf','dfdfdf'];
+    let arr2 = [];
+    
+
+    //reduce() 2가지를 받습니다. 익명함수 인자값이 1: 이전값  2: 벨류값 3: 인덱스값 
+    //        익명함수   ,prev
+    //reduce( function(), [] )
+    /*
+    arr2 = arr.reduce((p,v)=>{
+        //console.log(pre,value)
+        return p+v;
+    });
+    */
+    //()=>{} // 익명함수
+    //'1' // 임의값
+
+
+    
+
+    //console.log(arr2);
+
+    //두번쨰 인자값에 대한설명
+    arr2 = arr.reduce((p,v)=>{
+        console.log(p,v);
+        p.push(v);
+        return p;
+    },[]);
+
+    //console.log(arr2);
+
+    //map 대체로
+    // [] -> [8] -> [8,4] ->
+    arr2 = arr3.reduce((p,v)=>{
+        p.push(v.length);
+        return p;
+    },[]);
+
+    //console.log('map 대체 :',arr2);
+
+    //filter 대체로
+    // p : [] , v : 1
+    // p = [1]
+    // p = [1,2,3]   v 5 
+    // p = [1,2,3,4]
+    arr2 = arr.reduce((p,v,i)=>{
+        console.log(i);
+        if(v < 5){
+            p.push(v);
+        }
+        return p;
+    },[]);
+
+
+    result = txt.map((v)=>{
+        return v.padStart(2,0); // 항상 조건문이있는부분은 뭔가 매서드 존재할수있습니다. 그래서 구글링한번 해보는 연습도 해보시면좋아요.
+                                // 글자앞에 0 붙히기.
+    })
+    //console.log('filter 대체',arr2);
+
+
+    let arr = ['foo','mandoo','ingoo','blockchain'];
+    let result = [];
+
+    result = arr.map((v, i)=>{
+        return `${v+(i+1)}`;
+    });
+
+    // map -> reduce 활용해서 다시만드는것입니다.
+
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

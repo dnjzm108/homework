@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <style>
+        #visual{
+    height: 500px;
+    text-align: center;
+    /* overflow:visible; */
+}
+
+/* .visual_img{
+    width:1920px;
+    margin:0 auto;
+} */
+
+#container{
+    margin: 0 auto;
+    width: 100%;
+    height: 200px;
+    
+}
+
+#contents{  
+    /* 사이트에 표시될 컨텐츠의 영역을 정의한다. */
+    width: 1200px; 
+    height: 100px;
+    margin: 30px auto 0 auto;
+    
+    
+}
+.con_notice{ 
+    width: 600px;
+    
+
+}
+
+.con_notice>ul>li{ 
+    float: left;
+    width: 37%;
+    height: 230px;
+    padding: 5%;
+    border: 1px solid #ececec;
+    
+}
+
+.con_notice>ul>li.con_notice1{
+    
+    background: url('./image/main_con_ic_01.png') bottom right no-repeat; 
+    background-position: 178px 109px;
+    border-right: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+}
+.con_notice>ul>li.con_notice2{
+    
+    background: url('./image/main_con_ic_02.png') bottom right no-repeat; 
+    background-position: 178px 109px;
+    border-right: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+}
+.con_notice>ul>li.con_notice3{
+    
+    background: url('./image/main_con_ic_04.png') bottom right no-repeat; 
+    background-position: 178px 109px;
+    border-right: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+}
+.con_notice>ul>li.con_notice4{
+    
+    background: url('./image/main_con_ic_05.png') bottom right no-repeat; 
+    background-position: 178px 109px;
+    border-right: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+}
+ /* .con_notice> ul > li.con_notice1{background:} 
+.con_notice> ul > li.con_notice2{background:magenta;}
+.con_notice> ul > li.con_notice3{background:green;}
+.con_notice> ul > li.con_notice4{background:yellowgreen;} */
+
+
+.con_item>h2{ 
+    font-size: 20px;
+    
+}
+.con_item>h2> span{
+    font-size: 14px;
+    color: #4689e1;
+    display: block;
+}
+
+.con_item>p{ 
+    padding:30px 0 0 0; 
+    width: 130px;
+    font-size: 11px;
+}
+
+.con_item>a{
+    display: block;
+    margin-top: 30px;
+    width: 100px;
+    height: 30px;
+    color: white;
+    background: #6da6ea;
+    text-align: center;
+    border-radius: 15px;
+    line-height: 32px;
+
+}
+li{list-style: none;}
+</style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="contents">
+            <div class="con_notice">
+                <ul>
+                    <li class="con_notice1 con_item "> <!-- 클래스를 2개 사용한다. con_item을 써서 한번에 통제하기 위함이다.  -->
+                        <h2>
+                            <span>Game Arcjitecture</span>
+                            게임기획
+                        </h2>
+                        <p>
+                            게임 기획자를 위한 정석 Class
+                        </p>
+                        <a href="#">바로가기</a>
+                    </li>
+                    <li class="con_notice2 con_item">
+                        <h2>
+                            <span>Game Programming</span>
+                            게임 프로그래밍
+
+                        </h2>
+                        <p>
+                            게임프로그래밍을 위한 정석 Class
+                        </p>
+                        <a href="#">바로가기</a>
+                    </li>
+                    <li class="con_notice3 con_item">
+                        <h2>
+                            <span>Game Artworks</span>
+                            게임 원화
+                        </h2>
+                        <p>
+                            게임 원화를 위한 정석 Class
+                        </p>
+                        <a href="#">바로가기</a>
+                    </li>
+                    <li class="con_notice4 con_item">
+                        <h2>
+                            <span>Progamer Coaching</span>
+                            프로게이머 코칭
+                        </h2>
+                        <p>
+                            프로게이머 데뷔 Class
+                        </p>
+                        <a href="#">바로가기</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

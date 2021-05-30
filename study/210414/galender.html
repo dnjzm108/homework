@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type='text/javascript'>
+     let setYear = 2021;
+        let setMonth = 4;
+        let setDay = 1;
+        let dt = new Date(`${setYear}-${setMonth}-${setDay}`);
+        
+
+        let year=dt.getFullYear();  //dt.FullYear() 년도를 뽑아오는 매서드
+        let Month=dt.getMonth()+1;//dtgetMonth() 월를 뽑아오는 매서드 number   4->string dmfh qusghk
+        let day=dt.getDate();
+        //2021-04-01
+        console.log(year,Month,day);
+
+      String(Month)
+      String(day)
+//형변환
+
+        let MonthTxt= String(Month).padStart(2,0);
+        let dayTxt= String(day).padStart(2,0);
+
+        console.log(dayTxt);
+
+        console.log(`${String(year)}-${MonthTxt}-${dayTxt}`);
+
+        let arrDayStr = ['일','월','화','수','목','금','토'];
+        let weekDay= dt.getDay(); // 해당 일에대한 요일을 나타내는 매서드 0 일요일 1월요일 6 토요일 number
+        console.log(weekDay);// 4라고 출려되었고,목요일 4월1일이 목요일리라는 뜻이다.
+        console.log(arrDayStr[weekDay]);
+
+   //마지막 날짜를 가져오는 것을 만들겁니다. 2021년4월의 마지막날을 가져오기
+    let dt2 = new Date(setYear,setMonth,0);
+    let lastDay= dt2.getDate();
+    console.log(lastDay);
+//변수정리
+// 년도만 뽑아옴
+// 월만 뽑아옴 
+// 1일리 시작하는  요일 챙겨오기 //첫주를 표현하기 위해서 꼭 필요한갑
+
+let txt= '';
+for (let i = 1; i<=7; i++){
+    
+    txt += String(i).padStart(2,0)+' '; 
+}
+console.log(txt);
+
+//7일씩 2차원배열로 만들어야 한다.
+for(i=1; i<=10; i++){
+
+}
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

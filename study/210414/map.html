@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        map은 모든 원소에 변화를 주고싶을때 사용
+                let arr = ['foo','mandoo','ingoo','blockchain'];
+                let result = [];
+                //배열에 .map(fuction())
+
+                result=arr.map((v,i)=>{
+                    return `${v+(i+1)}`;
+                });
+                console.log(result);
+                console.log(`${result[0]}+${result[2]}`);
+
+
+
+        //String .lenght  Array.keght
+
+
+                let arr2 = arr.map((v)=>{
+                    return v.length;
+                });
+
+                console.log(arr2); // 3 6 5 10;
+
+                let arr3 = [];
+                arr.forEach((v)=>{
+                    arr3.push(v.length);
+                });
+                console.log(arr2);
+
+        let txt = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']; //01 02 03 04 05 06 07 08 09 10
+        let result = [];
+        //String.padStart()// 1;자리수를 몇까지 늘릴거냐 2: 어떤 부분을 추가 할건지
+        //항상 조검눔이 있는 부분은 뭔가 매서드가 존재할수있다. 구글링
+
+        result= txt.map((v)=>{
+            return v.padEnd(2,0);
+            return v.padStart(2,0);
+            
+        });
+        console.log(result);
+
+
+        result=txt.map((v,i)=>{
+            if(i<9){
+              return `0${v}`
+            }else{
+                return `${v}`
+            }
+        });
+        console.log(result);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

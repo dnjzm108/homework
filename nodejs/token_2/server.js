@@ -33,6 +33,7 @@ app.get('/',(req,res)=>{
     //set-cookie : 'token=ingoo' 응답 header
     let {msg} = req.query;  
     res.render('index');
+    console.log(req.cookies);
 })
 // 응답
 // HTTP/1.1 304 Not Modified

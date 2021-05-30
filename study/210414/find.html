@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script tpye="text/javascript">
+        let arr = [4,5,3,8,7,9,6,3,10,2,6];
+        let arr2 = [];
+// return 값이 arraㅛ 가 아니다
+// 한가지 원소만 찾아줌
+        // arr2 = arr.find(v => {
+        //     return v == 3;
+        // });
+
+        // console.log(arr2);
+
+        // let count = 0;
+        // arr2 = arr.find(v => {
+        //     count++;
+        //     // console.log(count);
+        //     return v == 3;
+        // });
+
+        //  console.log(count); //총 찾아본 횟수 [key 값을 의미합니다]
+        //  console.log(arr2);
+
+
+
+         arr2=arr.find (v=>{
+             return v==6;
+         });
+
+         let count=0;
+         arr2 = arr.find(v =>{
+             count++;
+             return v==6;
+         });
+         console.log(count);
+         console.log(arr2);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
