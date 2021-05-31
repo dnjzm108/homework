@@ -1,10 +1,8 @@
 document.addEventListener('DOMContentLoaded', init);
 function init() {
-    let btn = document.querySelector('#btn');
     const loginBtn = document.querySelector('#loginBtn');
     const layerPopup = document.querySelector('.layerPopup');
     const localLogin = document.querySelector('#localLogin')
-    btn.addEventListener('click', Btn);
     loginBtn.addEventListener('click', loginBtnFn);
     layerPopup.addEventListener('click', popupClose);
     localLogin.addEventListener('click', login);

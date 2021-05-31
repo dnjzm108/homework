@@ -6,7 +6,7 @@ const jwt = require('../../jwt');
 
 router.post('/user/join',controller.newJoin)
 router.get('/user/join',controller.join)
-router.get('/user/info',controller.info)
+router.get('/user/info',auth,controller.info)
 router.post('/user/login',controller.login)
 router.use('/',controller.main);
 

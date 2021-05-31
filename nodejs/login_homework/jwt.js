@@ -8,15 +8,15 @@ function createToken(userid,userpw,username){
         "tpy":"JET",
         "alg":"HS256"
     }
-    let exp = new Date().getTime() + (60*1000)
+    let exp = new Date().getTime() + ((60*6)*1000)
     let payload={
         userid,
         userpw,
         username,
         exp
     }
- 
 
+ 
     const encodingHeader = Buffer.from(JSON.stringify(header))
                                   .toString('base64')
                                   .replace('==','')

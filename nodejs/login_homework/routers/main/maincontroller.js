@@ -6,7 +6,12 @@ let main = (req, res) => {
     res.render('index')
 }
 let info = (req, res) => {
-    res.render(`info`)
+    let cookie = req.cookies.AccessToken;
+    let [header, payload, sign] = cookie.split('.');
+    let { userid,userpw,username,exp } = JSON.parse(Buffer.from(payload, 'base64').toString());
+    res.render(`info`, {
+        userid,userpw,username
+    })
 }
 
 let login = async (req, res) => {
@@ -22,15 +27,22 @@ let login = async (req, res) => {
     let result2 = await User.findOne({
         where: { userid: Suserid, userpw: Suserpw }
     })
-    console.log(result2.dataValues);
-    if(result2.dataValues){
+    if (result2){
         result = {
             result: true,
             msg: '로그인에 성공하셨습니다'
         }
-        let token = ctoken(userid);
+        let a = result2.dataValues.userid;
+        let b = result2.dataValues.userpw;
+        let c = result2.dataValues.username;
+        let aid = JSON.parse(Buffer.from(a,'base64').toString());
+        let apw = JSON.parse(Buffer.from(b,'base64').toString());
+        let aname = JSON.parse(Buffer.from(c,'base64').toString());
+
+        let { userid, userpw, username } = result2.dataValues;
+        let token = ctoken(aid, apw, aname);
         res.cookie('AccessToken', token, { httpOnly: true, secure: true, })
-    }else{
+    } else {
         result = {
             result: false,
             msg: '아이디와 패스워드를 확인하세요'
@@ -48,7 +60,8 @@ let join = (req, res) => {
 }
 let newJoin = (req, res) => {
     let { userid, userpw, username } = req.body;
-    let token = ctoken(userid, userpw, username);
+    let join = { userid, userpw, username }
+    let token = ctoken(join);
     res.cookie('AccessToken', token, { httpOnly: true, secure: true, })
     let Suserid = Buffer.from(JSON.stringify(userid))
         .toString('base64')
