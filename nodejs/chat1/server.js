@@ -25,7 +25,7 @@ nunjucks.configure('views', {
 
 app.use(cookieParser());
 
-sequelize.sync({ force: false })
+sequelize.sync({ force: true })
     .then(() => { // resolve
         console.log('DB접속이 완료되었습니다.')
     })
