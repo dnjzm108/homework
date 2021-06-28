@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+</head>
+<body>
+    
+<div id="root"></div>
+<script type="text/javascript">
+class LoginBtn extends React.Component{
+    constructor(props){
+        super(props)
+        
+        //상태 -> 변경되는 값
+         this.state = {
+             isLogin:false,
+
+        }
+    }
+    render(){
+        return(
+            React.createElement('button',{onClick:()=>{ this.setState({isLogin:!this.state.isLogin}) }},this.state.isLogin ? '로그아웃' : '로그인')
+       
+            );
+    }
+}
+
+//인자값을 두가지 받는다 -> 첫번째 내가 넣을 내용 , 두번째 내가 넣을 위치
+ReactDOM.render(
+   React.createElement(LoginBtn), // <button onClick="alert('로그인 버튼입니다')"></button>
+    document.querySelector('#root')
+)
+</script>
+
+</body>
+</html>
