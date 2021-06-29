@@ -14,42 +14,7 @@
 
 <body>
 
-    <div id="root">
-        <!--
-        <ul class="comment">
-            <li>
-                <ul class="comment-row">
-                    <li class="comment-id">web7722</li>
-                    <li class="comment-content">안녕하세요 방가</li>
-                    <li class="comment-date">20221-06-28</li>
-                </ul>
-            </li>
-            <li>
-                <ul class="comment-row">
-                    <li class="comment-id">web7722</li>
-                    <li class="comment-content">안녕하세요 방가</li>
-                    <li class="comment-date">20221-06-28</li>
-                </ul>
-            </li>
-            <li>
-                <ul class="comment-row">
-                    <li class="comment-id">web7722</li>
-                    <li class="comment-content">안녕하세요 방가</li>
-                    <li class="comment-date">20221-06-28</li>
-                </ul>
-            </li>
-            <li class="comment-form">
-                <form>
-                    <h4>댓글쓰기 <span>(3)</span></h4>
-                    <span class="ps_box">
-                        <input type="text" placeholder="댓글내용을 입력해주세요." class="int"/>
-                    </span>
-                    <input type="submit" value="등록" class="btn"/>
-                </form>
-            </li>
-        </ul>
-        -->
-    </div>
+    <div id="root"></div>
 
     <script type="text/babel">
 
@@ -57,10 +22,10 @@
             render() {
                 return (
                     <li className="comment-form">
-                        <form>
+                        <form  onSubmit={this.props.on}>
                             <h4>댓글쓰기 <span>(3)</span></h4>
                             <span className="ps_box">
-                                <input type="text" placeholder="댓글내용을 입력해주세요." className="int" />
+                                <input type="text" name="box" placeholder="댓글내용을 입력해주세요." className="int" />
                             </span>
                             <input type="submit" value="등록" className="btn" />
                         </form>
@@ -68,14 +33,13 @@
                 )
             }
         }
-
         class ComponentRow extends React.Component {
             render() {
                 return (
                     <li>
                         <ul className="comment-row">
                             <li className="comment-id">web7722</li>
-                            <li className="comment-content">안녕하세요 방가</li>
+                            <li className="comment-content">{this.props.value}</li>
                             <li className="comment-date">20221-06-28</li>
                         </ul>
                     </li>
@@ -84,14 +48,26 @@
         }
 
         class CommentApp extends React.Component {
+            constructor(props){
+                super(props)
+                this.state ={
+                    content:''
+                }
+            }
+            onSubmit = (e) =>{
+                e.preventDefault()
+                console.log(e.target.box.value);
+                this.setState({
+                    content:e.target.box.value
+                })
+                console.log(this.state.content);
+            }
             render() {
                 /* javascript + [XML] = JSX*/
                 return (
                     <ul className="comment">
-                        <ComponentForm />
-                        <ComponentRow />
-                        <ComponentRow />
-                        <ComponentRow />
+                        <ComponentForm on ={this.onSubmit}/>
+                        <ComponentRow value = {this.state.content} />
                     </ul>
                 )
             }

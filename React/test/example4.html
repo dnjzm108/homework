@@ -25,12 +25,17 @@
                     currentTime:new Date().toLocaleTimeString(),
                 }
             }
-            render() {
-                // code 를 작성할수 있다.
+
+            componentDidMount(){
                 setInterval(()=>{
                     this.setState({currentTime:new Date().toLocaleTimeString()})
                 },1000)
 
+            }
+
+            render() {
+                // code 를 작성할수 있다.
+              console.log('render');
                 return(
                     <div>
                         <h1>HEllow world</h1>
