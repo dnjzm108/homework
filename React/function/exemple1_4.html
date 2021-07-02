@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리액트 시간</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="../react_example/example6.css">
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // class App extends React.Component{
+        //     state={
+        //         isLogin:false,
+        //     }
+        //     handleClick = () =>{
+        //         this.setState({isLogin:!this.state.isLogin})
+        //     }
+
+        //     render(){
+        //         return(
+        //             <>
+        //             <p>{this.state.isLogin ? '아무개님 환영합니다':'로그인을 진행해쥬세요'}</p>
+        //             <button onClick={this.handleClick}>login</button>
+        //             </>
+        //         )
+        //     }
+        // }
+
+        function App() {
+            let [islogin, setIslogin] = React.useState(false)
+
+            const handleClick = () =>{
+                setIslogin(!islogin)
+            }
+
+            return (
+                <>
+                    <p>{islogin ? '아무개님 환영합니다' : '로그인을 진행해주세요'}</p>
+                    <button onClick={handleClick}>login</button>
+                </>
+            )
+        }
+
+        ReactDOM.render(
+            <App />,
+            document.querySelector('#root')
+        )
+    </script>
+</body>
+
+</html>

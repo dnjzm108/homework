@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리액트 시간</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="../react_example/example6.css">
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        function App() {
+
+               /* 변수 , 함수*/
+            let [text, setText] = React.useState('hellow world!')
+            let [text1, setText1] = React.useState('hellow world!1')
+            let [text2, setText2] = React.useState('hellow world!2')
+            
+            let [list,setlist] = React.useState([1,2,3,4,5])
+
+            const handleClick = e => {
+                setText('바꿈')
+                setText1('바꿈1')
+                setText2('바꿈2')
+            }
+            return (
+                <>
+                    <p onClick={handleClick}>{text}</p>
+                    <p>{text1}</p>
+                    <p>{text2}</p>
+                    <p>
+                        {list.map(v=>v==5)}
+                        </p>
+                </>
+            )
+        }
+
+        // class App extends React.Component {
+
+        //     state = {
+        //         text = 'hello world!',
+        //         text2 = 'hello world!2',
+        //         text3 = 'hello world!3'
+        //     }
+        // handleClick =(e)=>{
+        //  this.setState({text:'바꿈',text1:'바꿈',text2:'바꿈'})
+        //     this.state.text
+        // }
+        //     render() {
+        //         return (
+        //             <>
+        //                 <p onClick={this.handdleClick}>{this.state.text}</p>
+        //                 <p>{this.state.text2}</p>
+        //                 <p>{this.state.text3}</p>
+        //             </>
+        //         )
+        //     }
+        // }
+
+
+        ReactDOM.render(
+            <App />,
+            document.querySelector('#root')
+        )
+    </script>
+</body>
+
+</html>

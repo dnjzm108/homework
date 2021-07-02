@@ -146,7 +146,7 @@
             //CRUD
             onCreate = (data) => { //일단 댓글쓸때 사용할 함수를 미리 
                 let item = { userid: 'web7722', content: data, date: '2021-07-01' }
-                let { list } = { ...this.state } // 냐 현재 state list를 복사해서 list라는 변수에 넣겠다
+                let { list } = { ...this.state } // 내가 현재 state list를 복사해서 list라는 변수에 넣겠다
                 let newList = [...list, { ...item }] // 새로운변수를 선언해서 list라는 변수와, item이라는 변수를
                 /*
                 array.map()
@@ -201,6 +201,8 @@
                 )
             }
         }
+
+
         class App extends React.Component {
             render() {
                 return (
