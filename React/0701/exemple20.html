@@ -17,205 +17,110 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        class CommentForm extends React.Component {
-            state = {
-                content: '',
-            }
+    function Square(props) {
+  return (
+    <button className="square" onClick={props.onClick}>
+      {props.value}
+    </button>
+  );
+}
 
-            handleChange = (e) => {
+class Board extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      squares: Array(9).fill(null),
+      xIsNext: true,
+    };
+  }
 
-                this.setState({ [e.target.name]: e.target.value })
-            }
-            handleSubmit = (e) => {
-                e.preventDefault()
-                //let {content} = ...this.state
-                //this.props.onCreate(content)
-                this.props.onCreate(this.state.content)
-                this.setState({ content: '' })
-            }
+  handleClick(i) {
+    const squares = this.state.squares.slice();
+    squares[i] = this.state.xIsNext ? 'X' : 'O';
+    this.setState({
+      squares: squares,
+      xIsNext: !this.state.xIsNext,
+    });
+  }
 
-            render() {
-                return (
-                    <li className="comment-form">
-                        <form onSubmit={this.handleSubmit}>
-                            <h4>댓글쓰기 <span>({this.props.count})</span></h4>
-                            <span className="ps_box">
-                                <input
-                                    type="text"
-                                    placeholder="댓글내용을 입력해주세요."
-                                    className="int"
-                                    name="content"
-                                    value={this.state.content}
-                                    onChange={this.handleChange}
-                                />
-                            </span>
-                            <input type="submit" value="등록" className="btn" />
-                        </form>
-                    </li>
-                )
-            }
-        }
-        class CommentList extends React.Component {
-            state = {
-            content:'',
-            key:Infinity,
-        }
+  renderSquare(i) {
+    return (
+      <Square
+        value={this.state.squares[i]}
+        onClick={() => this.handleClick(i)}
+      />
+    );
+  }
 
-        handleClick = (key) => {
-            this.setState({key:key})
-        }
-        // 
+  render() {
+    const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
 
-        handleChange = (e) => {
-            this.setState({ [e.target.name]:e.target.value })
-        }
+    return (
+      <div>
+        <div className="status">{status}</div>
+        <div className="board-row">
+          {this.renderSquare(0)}
+          {this.renderSquare(1)}
+          {this.renderSquare(2)}
+        </div>
+        <div className="board-row">
+          {this.renderSquare(3)}
+          {this.renderSquare(4)}
+          {this.renderSquare(5)}
+        </div>
+        <div className="board-row">
+          {this.renderSquare(6)}
+          {this.renderSquare(7)}
+          {this.renderSquare(8)}
+        </div>
+      </div>
+    );
+  }
+}
 
-        handleEnter = (e) => {
-            if(e.key === 'Enter'){
-                let {key,content} = {...this.state}
-                this.props.onUpdate(key,content)
-                this.setState({key:Infinity,content:''})
-            }
-        }
+class Game extends React.Component {
+  render() {
+    return (
+      <div className="game">
+        <div className="game-board">
+          <Board />
+        </div>
+        <div className="game-info">
+          <div>{/* status */}</div>
+          <ol>{/* TODO */}</ol>
+        </div>
+      </div>
+    );
+  }
+}
 
-        inputBox = (content) => {
-            return(
-                <input
-                    type="text" 
-                    className="comment-update-input" 
-                    name="content"
-                    defaultValue={content}
-                    onChange={this.handleChange}
-                    onKeyDown={this.handleEnter}
-                />
-                )
-        }
+// ========================================
 
-        renderList = () => {
-            return(
-                this.props.items.map((item,key)=>{
-                    return(
-                        <li key={key}>
-                            <ul className="comment-row">
-                                <li className="comment-id">{item.userid}</li>
-                                <li className="comment-content">
-                                    
-                                    <span onClick={()=>{ this.handleClick(key) }}>
-                                        {key === this.state.key ? this.inputBox(item.content) : item.content}
-                                    </span>
-                                    <span 
-                                        className="comment-delete-btn"
-                                        onClick={ ()=>{this.props.onDelete(key)} }
-                                    >
-                                        X
-                                    </span>
-                                </li>
-                                <li className="comment-date">{item.date}</li>
-                            </ul>
-                        </li>
-                    )
-                })
-            )
-        }
+ReactDOM.render(
+  <Game />,
+  document.getElementById('root')
+);
 
-        input = 0
-
-        render(){
-            return (
-                <>
-                    {this.renderList()}
-                </>
-            );
-        }
+function calculateWinner(squares) {
+  const lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+  for (let i = 0; i < lines.length; i++) {
+    const [a, b, c] = lines[i];
+    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      return squares[a];
     }
-        class CommentLayout extends React.Component {
-            render() {
-                return (
-                    <ul className="comment">
-                        {this.props.children}
-                    </ul>
-                )
-            }
-        }
+  }
+  return null;
+}
 
-        class Comment extends React.Component { //모든 댓글기능이 다 그려지는 부분
-            state = {
-                list: [],
-                flag: false
-            }
-            //CRUD
-            onCreate = (data) => { //일단 댓글쓸때 사용할 함수를 미리 
-                let item = { userid: 'web7722', content: data, date: '2021-07-01' }
-                let { list } = { ...this.state } // 내가 현재 state list를 복사해서 list라는 변수에 넣겠다
-                let newList = [...list, { ...item }] // 새로운변수를 선언해서 list라는 변수와, item이라는 변수를
-                /*
-                array.map()
-                array.filter()
-                비구조할당문
-                깊은복사  얇은복사
-  
-                현재값에서 내용을 복삭한다음에,
-                복사한대서 추가할 내용 을 넣고
-                넣은 다음에 .
-                this.state.list = 배열이 3개짜리에서
-                새로만든  배열이 4개짜리로 변경하겠다
-                */
-                this.setState({ list: newList })
-            }
-            onUpdate = (index,content) => {
-                let {list} = {...this.state} 
-                list[index].content = content
-                this.setState({list:list})
-
-            }
-          
-            onDelete = (data) => {
-                //data 변수 1
-                let { list } = { ...this.state }
-                let newList = list.filter((value, index) => {
-                    return data !== index
-                })
-                this.setState({ list: newList })
-            }
-            componentDidMount() { //생명주기 화면이 완전히 그려지면 한번더 실행함
-                let list = [
-                    { userid: 'web7722', content: '안녕하세요1', date: '2021-07-01' },
-                    { userid: 'web7722', content: '안녕하세요2', date: '2021-07-01' },
-                    { userid: 'web7722', content: '안녕하세요3', date: '2021-07-01' }
-                ]
-                this.setState({ list: list })
-            }
-            render() {
-                return (
-                    <CommentLayout>
-                        <CommentForm
-                            onCreate={this.onCreate}
-                            count={this.state.list.length}
-                        />
-                        <CommentList
-                            items={this.state.list}
-                            onDelete={this.onDelete}
-                            onUpdate={this.onUpdate}
-                        />
-                    </CommentLayout>
-                )
-            }
-        }
-
-
-        class App extends React.Component {
-            render() {
-                return (
-                    <Comment />
-                )
-            }
-        }
-
-
-        ReactDOM.render(
-            <App />,
-            document.querySelector('#root')
-        )
     </script>
 </body>
 
