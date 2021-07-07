@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import '../css/Navbar.css'
 import { FaFacebook, FaInstagram, FaBeer, FaTwitter, FaBars } from 'react-icons/fa'
+import NavToggle from './NavToggle'
+import { Link } from 'react-router-dom'
 
 class Navbar extends Component {
     state = {
-        fleg:false,
+        fleg: false,
         social: [
             {
                 id: 1,
@@ -28,21 +30,37 @@ class Navbar extends Component {
             },
             {
                 id: 2,
-                url: '/',
+                url: '/about',
                 text: 'about'
             },
             {
                 id: 3,
-                url: '/',
+                url: '/projects',
                 text: 'projects'
             }
-        ]
+        ],
+        showLinks: false,
     }
-   check_change = () =>{
-       console.log('aaa');
-        this.state.setState({this.state.fleg})
+    //showLinks false lincks-conteiner
+    check_change = () => {
+        console.log('aaa');
+        this.setState({ fleg: !this.state.fleg })
         console.log(this.state.fleg);
-   }
+    }
+    showContainer = () => {
+        let className = this.state.showLinks ? "links-container on" : "links-container"
+        // let className
+        // if (this.state.showLinks) {
+        //     className = "links-container on"
+        // } else {
+        //     className = "links-container "
+        // }
+        return className
+    }
+    handleToggle = () =>{
+        this.setState({showLinks : ! this.state.showLinks})
+    }
+
     render() {
         return (
             <nav>
@@ -50,21 +68,25 @@ class Navbar extends Component {
                     {/* logo */}
                     <div className="nav-header">
                         <h1 className="logo">logo</h1>
-                        <div className="icon" onClick={this.check_change}>
-                            <span className=""></span>
-                            <span className=""></span>
-                            <span className=""></span>
-                        </div>
+                        <NavToggle
+                        toggle={this.handleToggle}
+                        />
+
+                        {/* <div className="icon" onClick={this.check_change}>
+                                <span className={this.state.fleg ? 'check' : 'not_chack'}></span>
+                                <span className={this.state.fleg ? 'check' : 'not_chack'}></span>
+                                <span className={this.state.fleg ? 'check' : 'not_chack'}></span>
+                        </div> */}
 
                     </div>
                     {/* Navigation */}
-                    <div className="links-container">
+                    <div className={this.showContainer()}>
                         <ul className="links">
                             {
                                 this.state.menu.map(item => {
                                     let { id, url, text } = item
                                     return (
-                                        <li key={id}><a href={url}>{text}</a></li>
+                                        <li key={id}><Link to={url}>{text}</Link></li>
                                     )
                                 })
                             }

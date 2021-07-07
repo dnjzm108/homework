@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+#menu{
+    display: inline-block;
+    width: 13 vw;
+    margin: 10vw 0 0 10vw;
+    float: left;
+
+}
+#menu>h1{
+    font-weight: normal;
+}
+#menu>ul{
+    margin-top: 20px;
+}
+#menu>ul>li{
+    padding: 20px 0 ;
+    box-sizing: border-box;
+    border-bottom: 1px solid #000000;
+}
+#menu>ul>li:hover{
+    color: #006cdb;
+    border-bottom: 1px solid #006cdb;
+}
+

@@ -1,5 +1,5 @@
 {
-  "name": "webpack1",
+  "name": "webpack5",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,8 +12,7 @@
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-icons": "^4.2.0",
-    "react-router-dom": "^5.2.0"
+    "react-icons": "^4.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
@@ -25,7 +24,7 @@
     "mini-css-extract-plugin": "^2.1.0",
     "react-refresh": "^0.10.0",
     "style-loader": "^3.0.0",
-    "webpack": "^5.42.1",
+    "webpack": "^5.43.0",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2"
   }

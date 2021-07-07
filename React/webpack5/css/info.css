@@ -1,0 +1,47 @@
+#info{
+    width: 100%;
+}
+
+#info>ul{
+    width: 90%;
+    margin: 0 auto;
+}
+#info>ul>li{
+    border-bottom: 1px  solid #ddd;
+}
+#info>ul>li>span{
+    display: inline-block;
+    width: 5rem;
+    height: 100%;
+    text-align: center;
+    background: #f8f8f8;
+    margin-right: 20px;
+}
+
+#info>ul>li>textarea{
+    resize: none;
+    width: 90%;
+    height: 40vh;
+}
+
+#info>ul>p{
+    text-align: center;
+    margin-top: 20px;
+}
+#info>ul>p>a{
+    display: inline-block;
+    width: 150px;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-right: 20px;
+}
+#info>ul>p>a:nth-child(1){
+    color: white;
+    background: violet;
+}
+
+#test{
+    display: inline-block;
+    height: 40vh;
+}

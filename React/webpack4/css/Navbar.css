@@ -13,6 +13,27 @@
     height: 0;
     overflow: hidden;
 }
+.links-container.on{
+    height: 100%;
+}
+.links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+.links>li{
+    width: 100%;
+    text-align: center;
+    border: 1px solid #eee ;
+}
+.links>li>a{
+    display: inline-block;
+    font-size: 1.5rem;
+    padding: 0.75rem;
+    color: #000;
+}
+
 .social-icons{
     height: 0;
     overflow: hidden;
@@ -21,20 +42,22 @@
     width: 2rem;
     height: 30px;
     position: relative;
+
 }
 .icon >span{
     width: 100%;
     border: 3px solid black;
     position: absolute;
+    transition: all 0.4s;
 }
-.icon >span:nth-child(1){
+.not_chack:nth-child(1){
    top: 0;
 }
-.icon >span:nth-child(2){
+.not_chack:nth-child(2){
    top: 50%;
    transform: translateY(-50%);
 }
-.icon >span:nth-child(3){
+.not_chack:nth-child(3){
    bottom: 0;
 }
 
@@ -47,8 +70,9 @@
  }
  .check:nth-child(3){
     top: 50%;
-    transform: translateY(-50%) rotate(-45deg);
+    transform: translateY(-50%)  rotate(-45deg) ;
  } 
+
 /*  PC css style*/
 @media screen and (min-width:800px){
    
@@ -56,7 +80,7 @@
         font-size: 4rem; 
     }
     .icon{
-        font-size: 0;
+        display: none;
     }
     .nav-center{
         max-width: 1170px;
@@ -71,8 +95,13 @@
     }
     .links{
         display: flex;
+        flex-direction: row;
     }
-
+    .links >li{
+        width: 100%;
+        text-align: center;
+        border-bottom: none;
+    }
     .links >li >a{
         margin: 0 0.5rem;
         color: #000;
