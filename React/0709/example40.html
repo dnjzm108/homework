@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+    const useInput = (defaultValue)=>{
+        const [value,setValue] = React.useState(defaultValue)
+        const onChange = e =>{
+            //const {target:{value}}=e
+            //console.log(e);
+            const value = e.target.value  //이벤트를 발생시킨 value 값을 가져오는 부분
+            setValue(value)
+        }
+        return {value,onChange}  //return을 상태 value 와 onchange 함수 표현식을 다은 객체를 반환
+    }
+
+    const App=()=>{
+        const user = useInput('111')
+        const name = useInput('heini')
+
+        return(
+            <>
+                <h1>Hello Hooks</h1>
+                <input {...{'value':'kajlfsjdfk','type':"text",'onchage':onChange()}} name="user" placeholder="아이디를 입력해주세요."/>
+                <input {...name} name="name" placeholder="이름을 입력해주세요."/>
+            </>
+        )
+    }
+
+    ReactDOM.render(
+        <App />,
+        document.querySelector('#root')
+    )
+    </script>
+</body>
+</html>
