@@ -135,13 +135,12 @@ ul,li{
     <div id="root"> </div>
     <script type="text/babel">
 
-        class ComponentForm extends React.Component {
-            render() {
+        const ComponentForm = (props) => {
                 return (
                     <>
                         <li className="comment-form">
-                            <form onSubmit={this.props.onSubmit}>
-                                <h4>댓글쓰기 <span>{this.props.length}</span></h4>
+                            <form onSubmit={props.onSubmit}>
+                                <h4>댓글쓰기 <span>{props.length}</span></h4>
                                 <span className="ps_box">
                                     <input type="text" name="comment_content" placeholder="댓글내용을 입력해주세요." className="int" />
                                 </span>
@@ -151,28 +150,25 @@ ul,li{
                     </>
                 )
             }
-        }
+        
 
-        class ComponentRow extends React.Component {
-            render() {
+        const ComponentRow = (props) => {
                 return (
                     <>
                         <li>
                             <ul className="comment-row">
-                                <li className="comment-id">{this.props.userid}</li>
-                                <li className="comment-content">{this.props.content}</li>
-                                <li className="comment-date">{this.props.date}</li>
+                                <li className="comment-id">{props.userid}</li>
+                                <li className="comment-content">{props.content}</li>
+                                <li className="comment-date">{props.date}</li>
                             </ul>
                         </li>
                     </>
                 )
-            }
         }
 
-        class CommentApp extends React.Component {
-            constructor(props) {
-                super(props)
-                this.state = {
+        const CommentApp  = () => {
+           
+            let [state , setState] = React.useState({
                     comments: [
                         { userid: 'web7722', content: "안녕하세요aaaaa", date: "2021.06-03" },
                         { userid: 'web7722', content: "안녕하세요wwww", date: "2021.06-03" },
@@ -180,21 +176,22 @@ ul,li{
                         { userid: 'web7722', content: "안녕하세요", date: "2021.06-03" },
                         { userid: 'web7722', content: "안녕하세요", date: "2021.06-03" }
                     ]
-                }
-            }
+                })
+        
+            
 
-            onSubmit = (e) => {
-                e.preventDefault() //기존 이벤트를 막는거 
-                let input = e.target.querySelector('.int').value; //e.target 이벤트가 발생한 DOM form DOM  e.target.querySelector('.int').value
+           let onSubmit = (e) => {
+                e.preventDefault()
+                let input = e.target.querySelector('.int').value;
                 let obj = { userid: 'web7722', content:input, date: "2021.06-03" }
-                let {comments} = { ...this.state }
+                let {comments} = { ...state }
                 comments.push(obj);
-                this.setState({ comments:comments })
+                setState({ comments:comments })
                 e.target.reset()
             }
 
-            renderRow() {
-                let { comments } = { ...this.state }
+           let renderRow = () => {
+                let { comments } = { ...state }
                 return (
                     comments.map((value,key) => {
                         return (
@@ -209,17 +206,16 @@ ul,li{
                 )
             }
 
-            render(){
                 return (
                         <ul className="comment">
                             <ComponentForm
-                                 length={this.state.comments.length}
-                                 onSubmit={this.onSubmit} />
-                          {this.renderRow()}
+                                 length={state.comments.length}
+                                 onSubmit={onSubmit} />
+                          {renderRow()}
                          </ul>
                     
                 )
-            }
+            
         }
 
         ReactDOM.render(
