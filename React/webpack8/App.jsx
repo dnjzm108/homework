@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
-import Memo from './memo/memo1'
+import Counter from './component/counter/Counter'
+import Layout  from './component/context/layout'
+import Index from './component/styledComponent/index'
+import Game from './component/game/game'
 
 class App extends Component {
 
@@ -7,8 +10,9 @@ class App extends Component {
     render() {
         return (
             <>
-                <Memo />
-
+                {/* <Counter /> */}
+                {/* <Layout /> */}
+                <Game />
             </>
         )
     }
