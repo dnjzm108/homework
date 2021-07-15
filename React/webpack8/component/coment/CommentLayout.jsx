@@ -1,4 +1,5 @@
-import React, { useContext, useReducer } from 'react'
+import React, { useContext, useReducer,useEffect } from 'react'
+import {getComment} from './api/api'
 
 import Store from './Store/context'
 import reducer from './Store/reducer'
@@ -11,8 +12,14 @@ const CommentLayout = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, globalStore)
     console.log(state);
 
-    return (
+    useEffect(async()=>{
+        //console.log('최초실행 render');
+        getComment(dispatch)
+    },[])
+
+  return (
         <>
+        {/* Provider = state,dispatch */}
             <Store.Provider value={{state,dispatch}}>
                 <ul className="comment">
                     {children}

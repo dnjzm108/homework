@@ -14,7 +14,7 @@ class App extends Component {
             <>
                 {/* <Counter /> */}
                 {/* <Layout /> */}
-                <Just />
+                <Coment />
             </>
         )
     }
