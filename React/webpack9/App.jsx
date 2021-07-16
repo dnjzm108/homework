@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import Comment from './component/comment'
 
 class App extends Component {
 
@@ -7,7 +7,7 @@ class App extends Component {
     render() {
         return (
             <>
-               <h1>테스트중</h1>
+               <Comment />
             </>
         )
     }
