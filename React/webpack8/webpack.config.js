@@ -53,5 +53,6 @@ module.exports = {
     devServer:{
         publicPath:'/dist/',
         hot:true,
+        host:'0.0.0.0',
     }
 }

@@ -8,4 +8,4 @@ router.get('/',(req,res)=>{
 router.get('/write',(req,res)=>{
     res.render('./write.html')
 });
-module.exports=router;
+module.exports = router;

@@ -6,8 +6,9 @@ import Form from './component/form'
 const App = () => {
     return (
         <>
-           <Form />
+            <Form />
            <List />
+           <h1>뭐야</h1>
         </>
     )
 }
