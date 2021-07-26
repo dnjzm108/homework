@@ -1,38 +1,25 @@
 import React from 'react'
 
-const comment = () => {
-    const [state, setState] = React.useState('')
-    const [list, setList] = React.useState([])
 
-    const onSubmit = (e) => {
-        e.preventDefault()
-        setList(list)
-        console.log(e.target);
+const comment = () =>{
+    const[list,setList] = React.useState('')
+    const[input,setInput] =React.useState([])
+
+    const Change = (e) =>{
+        const 
     }
-
-    const onChange = (e) => {
-      
-        const {value} = {...e.target}
-        console.log(value);
-      //  setList(e.target.value)
-    }
-
-    return (
+    
+    return(
         <>
-            <form onSubmit={onSubmit}>
-                <input type="text" onChange={onChange} />
-                <button type="submit">입력</button>
-            </form>
+        <input type="text"/>
+        <button></button>
+         
+         <ul>
 
-            <ul>
-                {list.map((v,k)=>{
-                    <li key={k}>v</li>
-                })}
-                <li></li>
-            </ul>
+         </ul>
         </>
     )
 }
 
 
-export default comment
+export default Comment

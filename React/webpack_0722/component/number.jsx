@@ -22,25 +22,25 @@ import React from 'react'
 // }
 
 
-// const Number = () =>{
-// const [state,setState] = React.useState(0)
+const Number = () =>{
+const [state,setState] = React.useState(0)
 
-// const onUp = () =>{
-//     setState(state+1)
-// }
-// const onDown = () =>{
-//     setState(state-1)
-// }
+const onUp = () =>{
+    setState(state+1)
+}
+const onDown = () =>{
+    setState(state-1)
+}
 
-//     return(
-//         <>
+    return(
+        <>
 
-//         <input type="number" value={state} />
-//         <button onClick={onUp}>+1</button>
-//         <button onClick={onDown}>-1</button>
-//         </>
-//     )
-//}
+        <input type="number" value={state} />
+        <button onClick={onUp}>+1</button>
+        <button onClick={onDown}>-1</button>
+        </>
+    )
+}
 
 
 
@@ -70,37 +70,6 @@ import React from 'react'
 //     )
 // }
 
-const App = () =>{
-const [input,setInput] = React.useState('')
-const [list,setList] = React.useState([])
-
-const Change = (e) =>{
-    const {value} = {...e.target}
-    setInput(value)
-}
-
-const Submit = (e) =>{
-    e.preventDefault()
-    list.push(input)
-    setList(list)
-    setInput('')
-}
-    return(
-        <>
-        <form onSubmit={Submit}>
-
-            <input type="text"  onChange={Change} />
-            <button type="submit">등록</button>
-        </form>
-
-        <ul>
-            {
-                
-            }
-        </ul>
-        </>
-    )
-}
 
 
-export default App
+export default Number
