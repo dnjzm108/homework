@@ -1,4 +1,5 @@
 import Styled from 'styled-components'
+import { useState } from 'react'
 
 const Toggle = Styled.div`
   background:transparent;
@@ -51,23 +52,61 @@ const Toggle = Styled.div`
 }
 
 `
+const Accotdion = Styled.div`
+    position:absolute;
+    width:100%;
+    left:0px;
+    top:10vh;
+    z-index:5;
+    background:#fff;
+    padding: 7vh 0;
+
+    display:${(props)=>(props.flag ? 'block' : 'none' )};
 
 
+    & > ul{
+        margin-top:5vh;
+        display:flex;
+        flex-direction:column;
+    }
+    & > ul >li{
+    margin-top : 20px;
+    text-align:center;
+}
+`
 
-const NavToggle = () =>{
 
-    return(
+const NavToggle = () => {
+
+    const [visible, setVisible] = useState(false)
+    const handleToggle = () => {
+        setVisible(!visible)
+    }
+
+    return (
         <Toggle>
-            <input 
-            type="checkbox" 
-            id="nav-toggle"
-            className="nav-toggle"
+            <input
+                type="checkbox"
+                id="nav-toggle"
+                className="nav-toggle"
+                onClick={handleToggle}
             />
             <label htmlFor="nav-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </label>
+
+            {/*메뉴 생성*/}
+
+            <Accotdion flag={visible}>
+                <ul>
+                    <li>대분류 메뉴1</li>
+                    <li>대분류 메뉴2</li>
+                    <li>대분류 메뉴3</li>
+                    <li>대분류 메뉴4</li>
+                </ul>
+            </Accotdion>
         </Toggle>
     )
 }
