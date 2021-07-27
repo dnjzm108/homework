@@ -8,7 +8,7 @@ const Form = () =>{
     const [content,setContent] = React.useState('')
     const handleSubmit = (e) =>{
         e.preventDefault()
-        dispatch({type:'SUBMIT'})
+        dispatchgit ({type:'SUBMIT'})
     }
 
     const handleChange = (e) =>{
