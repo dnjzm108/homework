@@ -333,25 +333,93 @@ import React from 'react'
 
 //     )
 // }
+// const Comment = () => {
+
+//     const [list, setList] = React.useState([])
+//     const [input, setInput] = React.useState('')
+
+//     const onSubmit = (e) => {
+//         e.preventDefault()
+//         list.push(input)
+//         setList(list)
+//         setInput('')
+//     }
+//     const onChange = (e) => {
+//         const { value } = { ...e.target }
+//         setInput(value)
+//     }
+
+//     return (
+//         <>
+//             <form onSubmit={onSubmit}>
+//                 <input type="text" value={input} onChange={onChange} />
+//                 <button type="submit">등록</button>
+//             </form>
+
+//             <ul>
+           
+//                 {
+//                     list.map((v, k) => {
+//                         <li key={k}>{v}</li>
+                       
+//                     })
+//                 }
+//             </ul>
+//         </>
+//     )
+// }
+
+// const comment = () =>{
+// const [list,setList] = React.useState([])
+// const [input,setInput] = React.useState('')
+
+// const onChange = (e) =>{
+//     const {value} ={...e.target}
+//     setInput(value)
+// }
+// const onSubmit = (e) =>{
+//     e.preventDefault()
+//     list.push(input)
+//     setInput('')
+// }
+
+//     return(
+//         <>
+//         <form onSubmit={onSubmit}>
+//         <input type="text" value={input} onChange={onChange} />
+//         <button type="submit">등록</button>
+//         </form>
+//         <ul>
+//             {
+//                 list.map((v,k)=>{
+//                     return(
+//                         <li key={k}>{v}</li>
+//                     )
+//                 })
+//             }
+//         </ul>
+//         </>
+//     )
+// }
+
 
 const comment = () =>{
 
     const [list,setList] = React.useState([])
     const [input,setInput] = React.useState('')
 
-    const onSubmit =(e)=>{
+    const onSubmit = (e) =>{
         e.preventDefault()
         list.push(input)
-        setList(list)
         setInput('')
     }
     const onChange = (e) =>{
-        const{value} = {...e.target}
+        const {value} ={...e.target}
         setInput(value)
     }
 
     return(
-    <>
+        <>
         <form onSubmit={onSubmit}>
             <input type="text" onChange={onChange} value={input} />
             <button type="submit">등록</button>
@@ -359,17 +427,13 @@ const comment = () =>{
 
         <ul>
             {
-                list.map((v,k)=>{
-                    return(
-                        <li key={k}>{v}</li>
-                    )
-                })
+              list.map((v,k)=>{
+                return  <li key={k}>{v}</li>
+              })
             }
         </ul>
         </>
     )
 }
-
-
 
 export default comment
