@@ -1,47 +1,23 @@
 import Link from 'next/link'
 import NavToggle from './NavToggle'
+import Header from './layout/header'
+import {useContext} from 'react'
 
-const BlogLayout =({children}) =>{
-    return(
+const BlogLayout = ({ children }) => {
+
+   
+    return (
         <>
-        <div className="header">
-            {/* 로고와 메뉴*/}
-            <h1>logo</h1>
-            <ul>
-                <li>
-                    <Link href="/">
-                        <a>HOME</a>
-                    </Link>
-                </li>
-                <li>
-                    <Link href="posts/post">
-                        post
-                    </Link>
-                </li>
-                <li>
-                    <Link href="/login">
-                        login
-                    </Link>
-                </li>
-                <li>
-                    <Link href="/join">
-                        join
-                    </Link>
-                </li>
-            </ul>
 
-            <NavToggle/>
+            <Header />
+            <div className="conatiner">
+                {children}
 
-        </div>
+            </div>
 
-        <div className="conatiner">
-            {children}
-
-        </div>
-
-        <div className="footer">
-            copyright &copy; all reserved
-        </div>
+            <div className="footer">
+                copyright &copy; all reserved
+            </div>
         </>
     )
 }

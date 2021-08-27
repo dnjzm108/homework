@@ -1,16 +1,33 @@
 import Router from 'next/router'
-import styeld from './FormLayout.module.css'
+import Styled from 'styled-components'
+
+const Background = Styled.div`
+    width:100vw;
+    height:100vh;
+    background:#eee;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    & > div {
+        width:300px;
+        height:200px;
+        background:#fff;
+        padding:20px;
+    }
+`
+
 
 const FormLayout = ({ children }) => {
 
     return (
         <>
-        <button onClick={()=>Router.back()}>뒤로가기</button>
-            {children}
-            <div className={styeld.footer}>
-                copyright &copy; all reserved
-
-            </div>
+            <Background>
+                <div>
+                    <p onClick={() => Router.back()}>뒤로가기</p>
+                    {children}
+                </div>
+            </Background>
         </>
     )
 }

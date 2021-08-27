@@ -190,38 +190,4 @@ const Number = () => {
             )
  }
 
-// const App = () => {
-//     const [input, setInput] = React.useState('')
-//     const [list, setList] = React.useState([])
-
-//     const Change = (e) => {
-//         const { value } = { ...e.target }
-//         setInput(value)
-//     }
-
-//     const Submit = (e) => {
-//         e.preventDefault()
-//         list.push(input)
-//         setList(list)
-//         setInput('')
-//     }
-//     return (
-//         <>
-//             <form onSubmit={Submit}>
-
-//                 <input type="text" onChange={Change} />
-//                 <button type="submit">등록</button>
-//             </form>
-
-//             <ul>
-//                 {
-
-//                 }
-//             </ul>
-//         </>
-//     )
-// }
-
-
-
 export default Number

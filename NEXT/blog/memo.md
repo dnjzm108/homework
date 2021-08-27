@@ -68,3 +68,15 @@ vs code app 에서 다운
 vscode-styled-components 
 
 npm install styled-components
+
+
+-------------------------------------------0727----------------------
+
+# Styled Components 환경설정
+# _document.jsx 만들기
+# .babelrc
+
+# 에러가 날경우 _document.jsx 랑 .babelrc 를 삭제 후 다시 만들어보고
+# 그래도 안되면 .next 파일을 지우고 npm install next 를 다시 해본다  
+
+# npm install -D babel-plugin-styled-components
